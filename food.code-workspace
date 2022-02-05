@@ -1,0 +1,40 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2,
+    "editor.fontSize": 18,
+    "editor.bracketPairColorization.enabled": true,
+    "editor.guides.bracketPairs": "active",
+    "eslint.validate": ["typescript"],
+    "eslint.alwaysShowStatus": true,
+    "workbench.colorTheme": "One Dark Pro",
+    "workbench.iconTheme": "vscode-icons",
+    "vsicons.presets.angular": true,
+    "workbench.colorCustomizations": {
+      "activityBar.background": "#fff533",
+      "activityBar.activeBackground": "#fff533",
+      "activityBar.activeBorder": "#00bfb6",
+      "activityBar.foreground": "#15202b",
+      "activityBar.inactiveForeground": "#15202b99",
+      "activityBarBadge.background": "#00bfb6",
+      "activityBarBadge.foreground": "#15202b",
+      "titleBar.activeBackground": "#fff200",
+      "titleBar.inactiveBackground": "#fff20099",
+      "titleBar.activeForeground": "#15202b",
+      "titleBar.inactiveForeground": "#15202b99",
+      "statusBar.background": "#fff200",
+      "statusBarItem.hoverBackground": "#ccc200",
+      "statusBar.foreground": "#15202b",
+      "sash.hoverBorder": "#fff533",
+      "statusBarItem.remoteBackground": "#fff200",
+      "statusBarItem.remoteForeground": "#15202b"
+    },
+    "peacock.color": "#fff200"
+  }
+}

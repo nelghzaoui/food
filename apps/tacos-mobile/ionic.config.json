@@ -1,0 +1,7 @@
+{
+  "name": "Tacos",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
