@@ -1,6 +1,28 @@
 {
   "version": 2,
   "projects": {
+    "mobile-shell-feature": {
+      "projectType": "library",
+      "root": "libs/mobile/shell/feature",
+      "sourceRoot": "libs/mobile/shell/feature/src",
+      "prefix": "food",
+      "targets": {
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/mobile/shell/feature"],
+          "options": {
+            "jestConfig": "libs/mobile/shell/feature/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/mobile/shell/feature/src/**/*.ts", "libs/mobile/shell/feature/src/**/*.html"]
+          }
+        }
+      }
+    },
     "tacos-api": {
       "root": "apps/tacos-api",
       "sourceRoot": "apps/tacos-api/src",
@@ -138,10 +160,7 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/tacos-mobile/src/**/*.ts",
-              "apps/tacos-mobile/src/**/*.html"
-            ]
+            "lintFilePatterns": ["apps/tacos-mobile/src/**/*.ts", "apps/tacos-mobile/src/**/*.html"]
           }
         },
         "test": {

@@ -14,7 +14,9 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@food/mobile/shell/feature": ["libs/mobile/shell/feature/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

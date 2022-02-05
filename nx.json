@@ -27,6 +27,9 @@
     ]
   },
   "projects": {
+    "mobile-shell-feature": {
+      "tags": []
+    },
     "tacos-api": {
       "tags": []
     },
