@@ -1,0 +1,28 @@
+{
+  "core": {
+    "items": {
+      "empty": "No items available"
+    },
+    "forms": {
+      "title": {
+        "server-add": "Create {{ Item }}",
+        "server-update": "Update {{ Item }}"
+      },
+      "field": {
+        "name": "Name"
+      },
+      "button": {
+        "add": "Add",
+        "update": "Update"
+      }
+    },
+    "buttons": {
+      "cancel": "Cancel",
+      "ok": "Ok",
+      "confirm": "Confirm"
+    },
+    "price": {
+      "from": "From"
+    }
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "order": {
+    "new-order": {
+      "title": {
+        "default": "Your current order",
+        "step": "Choose your {{ step }}"
+      },
+      "segment": {
+        "tacos": "Tacos",
+        "drinks": "Drinks",
+        "fingers": "Fingers",
+        "dessert": "Dessert"
+      },
+      "summary": "Show my order"
+    },
+    "place": {
+      "title": "Select your place",
+      "inside": "Inside",
+      "takeaway": "Takeaway",
+      "delivery": "Delivery"
+    },
+    "tacos": {
+      "step-style": {
+        "classic": "Classic Tacos",
+        "gratin": "Gratin Tacos"
+      },
+      "step-size": {
+        "simple": "Simple",
+        "double": "Double",
+        "maxi": "Maxi",
+        "extreme": "X-Treme",
+        "meat": "{{ number }} meat",
+        "meats": "{{ number }} meats",
+        "extra-info": " 2 kg"
+      },
+      "step-meat": {
+        "hamburger": "Hamburger",
+        "chicken": "Chicken",
+        "cordon-bleu": "Cordon Bleu",
+        "tenders": "Tenders",
+        "kebab": "Kebab",
+        "nuggets": "Nuggets",
+        "marinated-chicken": "Marinated Chicken",
+        "fricadelle": "Fricadelle",
+        "mexicanos": "Mexicanos",
+        "veggie-burger": "Veggie Burger",
+        "rosti": "Rosti"
+      },
+      "step-sauce": {
+        "mayo": "Mayonnaise",
+        "ketchup": "Ketchup",
+        "andalouse": "Andalouse",
+        "barbecue": "Barbecue",
+        "biggy": "Biggy",
+        "tartare": "Tartare",
+        "pita": "Pita",
+        "curry": "Curry",
+        "toscane": "Toscane",
+        "cocktail": "Cocktail",
+        "brazil": "Brazil",
+        "algerian": "Algerian",
+        "moroccan": "Moroccan",
+        "samourai": "Samouraï",
+        "chili-thai": "Chili Thai",
+        "harissa": "Harissa"
+      },
+      "step-garnish": {
+        "tomato": "Tomato",
+        "pepper": "Pepper",
+        "cheddar": "Cheddar",
+        "mozza": "Mozzarella",
+        "jalapenos": "Jalapenos",
+        "egg": "Egg"
+      },
+      "step-gratin": {
+        "emmental": "Emmental",
+        "cheddar": "Cheddar",
+        "raclette": "Raclette",
+        "goat": "Goat",
+        "reblochon": "Reblochon",
+        "mozza": "Mozzarella"
+      }
+    }
+  }
+}

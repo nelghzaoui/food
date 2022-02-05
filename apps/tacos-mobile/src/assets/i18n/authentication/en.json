@@ -1,0 +1,27 @@
+{
+  "authentication": {
+    "common": {
+      "register": "Sign Up",
+      "login": "Log In",
+      "email": "E-mail",
+      "password": "Password",
+      "social-network": "Or connect with"
+    },
+    "home": {
+      "title": "Welcome",
+      "subtitle": "Create an account and access thousand of cool stuffs",
+      "started": "Getting Started"
+    },
+    "registration": {
+      "subtitle": "Fill details and create your account",
+      "fullname": "Full Name",
+      "phone": "Phone",
+      "registered": "Already have an account ?",
+      "newAccount": "Your account has been successfully created !"
+    },
+    "login": {
+      "forgot-password": "Forgot Password ?",
+      "not-registered": "Doesn't have an account yet ?"
+    }
+  }
+}
