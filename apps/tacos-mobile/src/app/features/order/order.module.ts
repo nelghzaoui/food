@@ -1,12 +1,10 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
 import { SharedModule } from '@shared/shared.module';
+import { OrderRouting } from './routes/order.routing';
 
 @NgModule({
   declarations: [],
   providers: [],
-  imports: [SharedModule, RouterModule.forChild(OrderModule.ROUTES)]
+  imports: [SharedModule, OrderRouting]
 })
-export class OrderModule {
-  private static ROUTES: Routes = [];
-}
+export class OrderModule {}
