@@ -5,7 +5,7 @@ const routes: Routes = [
   {
     path: 'home',
     loadChildren: () =>
-      import('../../../../../../apps/tacos-mobile/src/app/home/home.module').then((m) => m.HomePageModule)
+      import('../../../../../../apps/tacos-mobile/src/app/features/home/home.module').then((m) => m.HomePageModule)
   },
   {
     path: '',
