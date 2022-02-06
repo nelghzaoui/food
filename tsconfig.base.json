@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@food/mobile/shell/feature": ["libs/mobile/shell/feature/src/index.ts"]
+      "@food/mobile/core/modules": ["libs/mobile/core/modules/src/index.ts"],
+      "@food/shared/models/environment": ["libs/shared/models/environment/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

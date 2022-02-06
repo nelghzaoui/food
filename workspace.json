@@ -1,24 +1,46 @@
 {
   "version": 2,
   "projects": {
-    "mobile-shell-feature": {
+    "mobile-core-modules": {
       "projectType": "library",
-      "root": "libs/mobile/shell/feature",
-      "sourceRoot": "libs/mobile/shell/feature/src",
+      "root": "libs/mobile/core/modules",
+      "sourceRoot": "libs/mobile/core/modules/src",
       "prefix": "food",
       "targets": {
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/mobile/shell/feature"],
+          "outputs": ["coverage/libs/mobile/core/modules"],
           "options": {
-            "jestConfig": "libs/mobile/shell/feature/jest.config.js",
+            "jestConfig": "libs/mobile/core/modules/jest.config.js",
             "passWithNoTests": true
           }
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/mobile/shell/feature/src/**/*.ts", "libs/mobile/shell/feature/src/**/*.html"]
+            "lintFilePatterns": ["libs/mobile/core/modules/src/**/*.ts", "libs/mobile/core/modules/src/**/*.html"]
+          }
+        }
+      }
+    },
+    "shared-models-environment": {
+      "root": "libs/shared/models/environment",
+      "sourceRoot": "libs/shared/models/environment/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["libs/shared/models/environment/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shared/models/environment"],
+          "options": {
+            "jestConfig": "libs/shared/models/environment/jest.config.js",
+            "passWithNoTests": true
           }
         }
       }

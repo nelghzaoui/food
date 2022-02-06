@@ -1,5 +1,5 @@
 module.exports = {
-  displayName: 'mobile-shell-feature',
+  displayName: 'mobile-shell-utils',
   preset: '../../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
@@ -8,7 +8,7 @@ module.exports = {
       stringifyContentPathRegex: '\\.(html|svg)$'
     }
   },
-  coverageDirectory: '../../../../coverage/libs/mobile/shell/feature',
+  coverageDirectory: '../../../../coverage/libs/mobile/shell/utils',
   transform: {
     '^.+\\.(ts|js|html)$': 'jest-preset-angular'
   },
