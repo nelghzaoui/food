@@ -1,8 +1,9 @@
 import { Injectable } from '@nestjs/common';
+import { environment } from '../environments/environment';
 
 @Injectable()
 export class AppService {
-  getData(): { message: string } {
-    return { message: 'Welcome to tacos-api!' };
+  getData() {
+    return { message: environment.production };
   }
 }
