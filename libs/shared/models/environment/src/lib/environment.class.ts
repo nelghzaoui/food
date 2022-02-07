@@ -13,7 +13,7 @@ export class MobileEnvironment extends BaseEnvironment {
 }
 
 export class ServerEnvironment extends BaseEnvironment {
-  constructor(public production: boolean, public version: string) {
+  constructor(public production: boolean, public endpoint: string, public version: string) {
     super();
   }
 }

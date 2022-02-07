@@ -14,12 +14,6 @@
     }
   ],
   "compilerOptions": {
-    "baseUrl": "./",
-    "paths": {
-      "@environments/*": ["src/environments/*"],
-      "@features/order/*": ["src/app/features/order/*"],
-      "@shared/*": ["src/app/shared/*"]
-    },
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "noImplicitReturns": true,
