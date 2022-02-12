@@ -45,6 +45,28 @@
         }
       }
     },
+    "shared-models-food": {
+      "projectType": "library",
+      "root": "libs/shared/models/food",
+      "sourceRoot": "libs/shared/models/food/src",
+      "prefix": "food",
+      "targets": {
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shared/models/food"],
+          "options": {
+            "jestConfig": "libs/shared/models/food/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/shared/models/food/src/**/*.ts", "libs/shared/models/food/src/**/*.html"]
+          }
+        }
+      }
+    },
     "tacos-api": {
       "root": "apps/tacos-api",
       "sourceRoot": "apps/tacos-api/src",

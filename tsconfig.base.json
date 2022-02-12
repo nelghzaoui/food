@@ -16,7 +16,8 @@
     "baseUrl": ".",
     "paths": {
       "@food/mobile/core/modules": ["libs/mobile/core/modules/src/index.ts"],
-      "@food/shared/models/environment": ["libs/shared/models/environment/src/index.ts"]
+      "@food/shared/models/environment": ["libs/shared/models/environment/src/index.ts"],
+      "@food/shared/models/food": ["libs/shared/models/food/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
