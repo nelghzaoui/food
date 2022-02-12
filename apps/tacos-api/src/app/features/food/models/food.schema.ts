@@ -14,6 +14,9 @@ export class Foods extends Document implements Food {
   price?: number;
 
   @Prop()
+  size?: number;
+
+  @Prop()
   allergens?: string[];
 }
 

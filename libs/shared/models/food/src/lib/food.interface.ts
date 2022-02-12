@@ -2,6 +2,7 @@ export interface Food {
   name: string;
   category: FoodCategory;
   price?: number;
+  size?: number;
   allergens?: string[];
 }
 
@@ -10,9 +11,9 @@ export enum FoodCategory {
   SAUCE = 'sauce',
   GARNISH = 'garnish',
   GRATIN = 'gratin',
+  FINGER = 'finger',
   DRINK = 'drink',
-  DESSERT = 'dessert',
-  FINGER = 'finger'
+  DESSERT = 'dessert'
 }
 
 export const FOOD_CATEGORY = [

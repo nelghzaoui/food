@@ -1,0 +1,142 @@
+{
+  "foods": [
+    {
+      "name": "mayo",
+      "category": "sauce"
+    },
+    {
+      "name": "ketchup",
+      "category": "sauce"
+    },
+    {
+      "name": "andalouse",
+      "category": "sauce"
+    },
+    {
+      "name": "barbecue",
+      "category": "sauce"
+    },
+    {
+      "name": "minced-meat",
+      "category": "meat"
+    },
+    {
+      "name": "chicken",
+      "category": "meat"
+    },
+    {
+      "name": "tenders",
+      "category": "meat"
+    },
+    {
+      "name": "nuggets",
+      "category": "meat"
+    },
+    {
+      "name": "jalapenos",
+      "category": "garnish",
+      "price": 0.8
+    },
+    {
+      "name": "egg",
+      "category": "garnish",
+      "price": 0.8
+    },
+    {
+      "name": "cheddar",
+      "category": "garnish",
+      "price": 0.5
+    },
+    {
+      "name": "mozza",
+      "category": "garnish",
+      "price": 0.5
+    },
+    {
+      "name": "emmental",
+      "category": "gratin",
+      "price": 1.5
+    },
+    {
+      "name": "cheddar",
+      "category": "gratin",
+      "price": 1.5
+    },
+    {
+      "name": "goat",
+      "category": "gratin",
+      "price": 1.5
+    },
+    {
+      "name": "mozza",
+      "category": "gratin",
+      "price": 1.5
+    },
+    {
+      "name": "fries",
+      "category": "finger",
+      "price": 1.5
+    },
+    {
+      "name": "fries-cheddar",
+      "category": "finger",
+      "price": 2.5
+    },
+    {
+      "name": "tenders",
+      "category": "finger",
+      "price": 5,
+      "size": 5
+    },
+    {
+      "name": "chili-cheese",
+      "category": "finger",
+      "price": 3.9,
+      "size": 5
+    },
+    {
+      "name": "soft",
+      "category": "drink",
+      "price": 1.5,
+      "size": 0.33
+    },
+    {
+      "name": "redbull",
+      "category": "drink",
+      "price": 2,
+      "size": 0.33
+    },
+    {
+      "name": "fresh-juice",
+      "category": "drink",
+      "price": 3,
+      "size": 0.5
+    },
+    {
+      "name": "smoothie",
+      "category": "drink",
+      "price": 3.5,
+      "size": 0.5
+    },
+    {
+      "name": "tiramisu",
+      "category": "dessert",
+      "price": 3.9
+    },
+    {
+      "name": "cake",
+      "category": "dessert",
+      "price": 2.5
+    },
+    {
+      "name": "ice-cream",
+      "category": "dessert",
+      "price": 3.2
+    },
+    {
+      "name": "sundae",
+      "category": "dessert",
+      "price": 2.5
+    }
+  ]
+}
