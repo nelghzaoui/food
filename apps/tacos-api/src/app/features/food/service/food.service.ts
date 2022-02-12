@@ -3,11 +3,11 @@ import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { CoreService } from '../../../core/service/core.service';
 import { Food } from '@food/shared/models/food';
-import { FoodDocument } from '../models/food.schema';
+import { Foods } from '../models/food.schema';
 
 @Injectable()
 export class FoodService extends CoreService {
-  constructor(@InjectModel(FoodDocument.name) private readonly foodModel: Model<FoodDocument>) {
+  constructor(@InjectModel(Foods.name) private readonly foodModel: Model<Foods>) {
     super();
   }
 
