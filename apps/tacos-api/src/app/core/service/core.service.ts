@@ -11,11 +11,7 @@ export class CoreService {
     try {
       _model = await model.findById(id).exec();
     } catch (error) {
-      throw new NotFoundException(error);
-    }
-
-    if (!model) {
-      throw new NotFoundException('Could not find model.');
+      throw new NotFoundException();
     }
 
     return _model;

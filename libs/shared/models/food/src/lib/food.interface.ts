@@ -14,3 +14,13 @@ export enum FoodCategory {
   Dessert = 'dessert',
   Finger = 'finger'
 }
+
+export const FoodCategoryMapped = [
+  FoodCategory.Meat,
+  FoodCategory.Sauce,
+  FoodCategory.Garnish,
+  FoodCategory.Gratin,
+  FoodCategory.Drink,
+  FoodCategory.Dessert,
+  FoodCategory.Finger
+];

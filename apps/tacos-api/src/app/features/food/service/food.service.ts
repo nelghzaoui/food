@@ -1,50 +1,43 @@
-import { Injectable, NotAcceptableException, NotFoundException } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { CoreService } from '../../../core/service/core.service';
-import { Food } from '../models/food.schema';
+import { Food } from '@food/shared/models/food';
+import { FoodDocument } from '../models/food.schema';
 
 @Injectable()
 export class FoodService extends CoreService {
-  constructor(@InjectModel(Food.name) private readonly foodModel: Model<Food>) {
+  constructor(@InjectModel(FoodDocument.name) private readonly foodModel: Model<FoodDocument>) {
     super();
   }
 
-  async create(food: Food): Promise<Food> {
+  async create(food: Food): Promise<string> {
     const result = await new this.foodModel(food).save();
 
-    return result;
+    return result._id;
   }
 
   async readAll(): Promise<Food[]> {
-    const foods = await this.foodModel.find().exec();
-
-    return foods;
+    return await this.foodModel.find().exec();
   }
 
   async read(id: string): Promise<Food> {
-    const food: Food = await super.find(this.foodModel, id);
-
-    return food;
+    return await super.find(this.foodModel, id);
   }
 
-  async update(id: string, params: Food): Promise<void> {
-    const food: Food = await super.find(this.foodModel, id);
+  async update(id: string, params: Food): Promise<Food> {
+    const food = await super.find(this.foodModel, id);
 
-    if (!params) {
-      throw new NotAcceptableException();
+    for (const key of Object.keys(params)) {
+      if (key) {
+        food[key] = params[key];
+      }
     }
 
-    if (params.name) food.name = params.name;
-
-    food.save();
+    return food.save();
   }
 
-  async delete(id: string): Promise<void> {
-    const result = await this.foodModel.deleteOne({ _id: id }).exec();
-
-    if (result.n === 0) {
-      throw new NotFoundException('Could not find alert.');
-    }
+  async delete(_id: string): Promise<number> {
+    return (await this.foodModel.deleteOne({ _id }).exec()).n;
   }
 }

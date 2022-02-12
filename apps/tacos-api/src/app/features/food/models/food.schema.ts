@@ -1,17 +1,14 @@
 import { Document } from 'mongoose';
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { FoodCategory } from '@food/shared/models/product';
+import { Food, FoodCategory, FoodCategoryMapped } from '@food/shared/models/food';
 
 @Schema()
-export class Food extends Document {
-  @Prop({ required: true })
-  id: string;
-
+export class FoodDocument extends Document implements Food {
   @Prop({ required: true })
   name: string;
 
-  @Prop({ required: true })
-  category: string;
+  @Prop({ required: true, type: 'Array', enum: FoodCategoryMapped })
+  category: FoodCategory;
 
   @Prop()
   price: number;
@@ -20,4 +17,4 @@ export class Food extends Document {
   allergens: string[];
 }
 
-export const FoodSchema = SchemaFactory.createForClass(Food);
+export const FoodSchema = SchemaFactory.createForClass(FoodDocument);
