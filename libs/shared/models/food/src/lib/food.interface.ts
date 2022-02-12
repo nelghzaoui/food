@@ -6,21 +6,21 @@ export interface Food {
 }
 
 export enum FoodCategory {
-  Meat = 'meat',
-  Sauce = 'sauce',
-  Garnish = 'garnish',
-  Gratin = 'gratin',
-  Drink = 'drink',
-  Dessert = 'dessert',
-  Finger = 'finger'
+  MEAT = 'meat',
+  SAUCE = 'sauce',
+  GARNISH = 'garnish',
+  GRATIN = 'gratin',
+  DRINK = 'drink',
+  DESSERT = 'dessert',
+  FINGER = 'finger'
 }
 
-export const FoodCategoryMapped = [
-  FoodCategory.Meat,
-  FoodCategory.Sauce,
-  FoodCategory.Garnish,
-  FoodCategory.Gratin,
-  FoodCategory.Drink,
-  FoodCategory.Dessert,
-  FoodCategory.Finger
+export const FOOD_CATEGORY = [
+  FoodCategory.MEAT,
+  FoodCategory.SAUCE,
+  FoodCategory.GARNISH,
+  FoodCategory.GRATIN,
+  FoodCategory.DRINK,
+  FoodCategory.DESSERT,
+  FoodCategory.FINGER
 ];
