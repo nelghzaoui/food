@@ -3,7 +3,7 @@
 // The list of file replacements can be found in `angular.json`.
 import { MobileEnvironment } from '@food/shared/models/environment';
 
-export const environment = new MobileEnvironment(false, 'http://localhost:', '0.0.0', []);
+export const environment = new MobileEnvironment(false, 'http://localhost:3333/api/', '0.0.0', []);
 
 /*
  * For easier debugging in development mode, you can import the following file

@@ -5,7 +5,7 @@ const routes: Routes = [
   {
     path: 'home',
     loadChildren: () =>
-      import('../../../../../../apps/tacos-mobile/src/app/features/home/home.module').then((m) => m.HomePageModule)
+      import('../../../../../../../apps/tacos-mobile/src/app/features/home/home.module').then((m) => m.HomePageModule)
   },
   {
     path: '',
@@ -18,4 +18,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })],
   exports: [RouterModule]
 })
-export class MobileCoreRoutingModule {}
+export class MobileCoreRouting {}

@@ -1,16 +1,16 @@
 import { LOCALE_ID, NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { RouteReuseStrategy } from '@angular/router';
+import { registerLocaleData } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import localeFR from '@angular/common/locales/fr-BE';
 import localeEN from '@angular/common/locales/en-BE';
 import localeNL from '@angular/common/locales/nl-BE';
+import { BrowserModule } from '@angular/platform-browser';
+import { RouteReuseStrategy } from '@angular/router';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { MultiTranslateHttpLoader } from 'ngx-translate-multi-http-loader';
 import { IonicRouteStrategy } from '@ionic/angular';
-import { MobileCoreRoutingModule } from './mobile-core-routing.module';
 import { Currency, Language } from '@food/shared/models/environment';
-import { registerLocaleData } from '@angular/common';
+import { MobileCoreRouting } from './routes/mobile-core.routing';
 
 registerLocaleData(localeEN, localeFR, localeNL);
 
@@ -21,7 +21,7 @@ registerLocaleData(localeEN, localeFR, localeNL);
 export class MobileCoreModule {
   private static MODULES = [
     BrowserModule,
-    MobileCoreRoutingModule,
+    MobileCoreRouting,
     HttpClientModule,
     TranslateModule.forRoot({
       defaultLanguage: Language.EN,
