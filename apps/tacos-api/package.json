@@ -1,0 +1,6 @@
+{
+  "name": "tacos-api",
+  "scripts": {
+    "import-database": "mongoimport --uri mongodb+srv://nasreddine:knOdphc5grRDW1uF@cluster0.qwhsm.mongodb.net/tacos --collection foods --file src/assets/data/foods.json --jsonArray"
+  }
+}
