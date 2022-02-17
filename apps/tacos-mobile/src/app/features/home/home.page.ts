@@ -10,6 +10,8 @@ export class HomePage {
   constructor(private readonly apiService: ApiService) {}
 
   onCall() {
-    this.apiService.get();
+    this.apiService.get('food').subscribe((food) => {
+      console.log('food', food);
+    });
   }
 }

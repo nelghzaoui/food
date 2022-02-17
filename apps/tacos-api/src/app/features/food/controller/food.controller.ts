@@ -12,7 +12,7 @@ import {
 import { FoodService } from '../service/food.service';
 import { Food } from '@food/shared/models/food';
 
-@Controller('foods')
+@Controller('food')
 export class FoodController {
   constructor(private readonly foodService: FoodService) {}
 
