@@ -5,16 +5,20 @@ import { LoadingController } from '@ionic/angular';
 export class LoadingTool {
   constructor(private readonly loadingCtrl: LoadingController) {}
 
-  async present(message = ''): Promise<void> {
+  async present(message = '') {
     const loading = await this.loadingCtrl.create({
       message: message,
       showBackdrop: true
     });
 
-    await loading.present();
+    return loading.present();
   }
 
-  dismiss(): void {
-    this.loadingCtrl.dismiss();
+  async dismiss() {
+    const loader = await this.loadingCtrl.getTop();
+
+    if (loader) {
+      this.loadingCtrl.dismiss();
+    }
   }
 }
