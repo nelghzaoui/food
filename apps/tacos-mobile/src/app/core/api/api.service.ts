@@ -1,9 +1,10 @@
-import { HttpClient, HttpEvent, HttpRequest, HttpResponse } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { take } from 'rxjs/operators';
-import { HttpMethod } from './models/http-method.enum';
-import { LoadingTool } from '../ui/loading.tool';
+import { Observable } from 'rxjs';
 import { environment } from '../../../environments/environment';
+import { LoadingTool } from '../ui/loading.tool';
+import { HttpMethod } from './models/http-method.enum';
 
 @Injectable({
   providedIn: 'root'
@@ -11,30 +12,30 @@ import { environment } from '../../../environments/environment';
 export class ApiService {
   constructor(private readonly httpClient: HttpClient, private readonly loadingTool: LoadingTool) {}
 
-  get() {
-    this.httpClient.get(`${environment.endpoint}/foods/`).subscribe((r) => console.log(r));
-    // this.request(HttpMethod.GET, 'food', undefined, false);
+  get<T>(service: string, parameters?: any, hasLoading = true): Observable<T> {
+    return this.request<T>(HttpMethod.GET, service, parameters, hasLoading);
   }
 
-  // private request<T>(method: HttpMethod, service: string, body = {}, showLoading: boolean): Promise<T> {
-  //   return new Promise((resolve, reject) => {
-  //     if (showLoading) this.loadingTool.present();
+  private request<T>(method: HttpMethod, service: string, body = {}, showLoading: boolean): Observable<T> {
+    return new Observable<T>((observer) => {
+      if (showLoading) this.loadingTool.present();
 
-  //     const request = { url: `${environment.endpoint}/${service}/`, body, method };
-  //     // const request = new Request(service, parameters, {}, showLoading);
-
-  //     this.httpClient
-  //       .request(request as any)
-  //       .pipe(take(1))
-  //       .subscribe(
-  //         (response) => {
-  //           console.log('response', response);
-  //           // resolve(response);
-  //         }
-  //         // (e: HttpResponse) => reject(this.handleError(e))
-  //       );
-  //   });
-  // }
+      this.httpClient
+        .request<T>(method, `${environment.endpoint}/${service}/`, body)
+        .pipe(take(1))
+        .subscribe(
+          (response) => {
+            observer.next(response);
+            this.log(response);
+          },
+          (error) => observer.error(error),
+          () => {
+            observer.complete();
+            this.loadingTool.dismiss();
+          }
+        );
+    });
+  }
 
   // private async handleError(e): Promise<MessageType[]> {
   //   const errors: MessageType[] = [];
@@ -59,9 +60,9 @@ export class ApiService {
   //   return errors;
   // }
 
-  private log(message: string, logs: Request): void {
+  private log(logs: any) {
     if (!environment.production) {
-      console.groupCollapsed(`[${new Date()}] ${message} -------------`);
+      console.groupCollapsed(`[${new Date()}] Response -------------`);
       console.log(logs);
       console.groupEnd();
     }
