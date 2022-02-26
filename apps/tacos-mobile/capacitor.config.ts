@@ -1,9 +1,9 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'com.tacos.dev',
-  appName: 'Tacos',
-  webDir: '../../dist/apps/tacos-mobile',
+  appId: 'be.tacos.txnas',
+  appName: 'tacos',
+  webDir: 'www',
   bundledWebRuntime: false
 };
 

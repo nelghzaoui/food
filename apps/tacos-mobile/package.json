@@ -1,6 +1,3 @@
 {
-  "name": "tacos",
-  "devDependencies": {
-    "@capacitor/cli": "3.2.5"
-  }
+  "name": "tacos"
 }
