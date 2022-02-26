@@ -26,27 +26,6 @@
       }
     ]
   },
-  "projects": {
-    "mobile-core-modules": {
-      "tags": []
-    },
-    "shared-models-environment": {
-      "tags": []
-    },
-    "shared-models-food": {
-      "tags": []
-    },
-    "tacos-api": {
-      "tags": []
-    },
-    "tacos-mobile": {
-      "tags": []
-    },
-    "tacos-mobile-e2e": {
-      "tags": [],
-      "implicitDependencies": ["tacos-mobile"]
-    }
-  },
   "cli": {
     "defaultCollection": "@nrwl/angular"
   },
