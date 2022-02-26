@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">tacos</string>
+    <string name="title_activity_main">tacos</string>
+    <string name="package_name">be.tacos.txnas</string>
+    <string name="custom_url_scheme">be.tacos.txnas</string>
+</resources>
