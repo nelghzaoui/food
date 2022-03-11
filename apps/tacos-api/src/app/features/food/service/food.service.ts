@@ -38,6 +38,6 @@ export class FoodService extends CoreService {
   }
 
   async delete(_id: string): Promise<number> {
-    return (await this.foodModel.deleteOne({ _id }).exec()).n;
+    return (await this.foodModel.deleteOne({ _id }).exec()).deletedCount;
   }
 }

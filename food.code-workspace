@@ -13,7 +13,7 @@
     "editor.guides.bracketPairs": "active",
     "eslint.validate": ["typescript"],
     "eslint.alwaysShowStatus": true,
-    "workbench.colorTheme": "One Dark Pro",
+    "workbench.colorTheme": "One Dark Pro Flat",
     "workbench.iconTheme": "vscode-icons",
     "vsicons.presets.angular": true,
     "workbench.colorCustomizations": {

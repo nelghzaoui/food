@@ -1,10 +1,10 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { EnforceDocument, Model } from 'mongoose';
+import { HydratedDocument, Model } from 'mongoose';
 
 @Injectable()
 export class CoreService {
-  protected async find<T>(model: Model<T>, id: string): Promise<T> {
-    let result: EnforceDocument<T, {}>;
+  protected async find<T>(model: Model<T>, id: string): Promise<HydratedDocument<T>> {
+    let result: HydratedDocument<T>;
 
     try {
       result = await model.findById(id).exec();
