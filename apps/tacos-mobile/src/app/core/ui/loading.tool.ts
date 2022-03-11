@@ -11,14 +11,10 @@ export class LoadingTool {
       showBackdrop: true
     });
 
-    return loading.present();
+    return await loading.present();
   }
 
   async dismiss() {
-    const loader = await this.loadingCtrl.getTop();
-
-    if (loader) {
-      this.loadingCtrl.dismiss();
-    }
+    this.loadingCtrl.dismiss();
   }
 }

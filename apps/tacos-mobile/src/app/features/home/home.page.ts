@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ApiService } from '../../core/api/api.service';
+import { FoodService } from '../food/services/food.service';
 
 @Component({
   selector: 'food-home',
@@ -7,11 +7,9 @@ import { ApiService } from '../../core/api/api.service';
   styleUrls: ['home.page.scss']
 })
 export class HomePage {
-  constructor(private readonly apiService: ApiService) {}
+  foods$ = this.foodService.foods$;
 
-  onCall() {
-    this.apiService.get('food').subscribe((food) => {
-      console.log('food', food);
-    });
-  }
+  constructor(private readonly foodService: FoodService) {}
+
+  onCall() {}
 }

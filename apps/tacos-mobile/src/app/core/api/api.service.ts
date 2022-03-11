@@ -2,50 +2,59 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Network } from '@capacitor/network';
 import { Platform } from '@ionic/angular';
-import { Observable } from 'rxjs';
-import { take } from 'rxjs/operators';
+import { Observable, Subscriber, take } from 'rxjs';
 import { environment } from '../../../environments/environment';
+import { AlertTool } from '../ui/alert.tool';
 import { LoadingTool } from '../ui/loading.tool';
 import { ErrorStatus } from './models/error-status.enum';
 import { HttpMethod } from './models/http-method.enum';
 import { MessageType } from './models/message-type.class';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable({ providedIn: 'root' })
 export class ApiService {
   constructor(
     private readonly httpClient: HttpClient,
+    private readonly alertTool: AlertTool,
     private readonly loadingTool: LoadingTool,
     private readonly platform: Platform
   ) {}
 
-  get<T>(service: string, parameters?: any, hasLoading = true): Observable<T> {
-    return this.request<T>(HttpMethod.GET, service, parameters, hasLoading);
+  get<T>(service: string, parameters?: T): Observable<T> {
+    return this.request<T>(HttpMethod.GET, service, parameters);
   }
 
-  private request<T>(method: HttpMethod, service: string, body = {}, showLoading: boolean): Observable<T> {
-    return new Observable<T>((observer) => {
-      if (showLoading) this.loadingTool.present();
+  post<T>(service: string, parameters?: T): Observable<T> {
+    return this.request<T>(HttpMethod.POST, service, parameters);
+  }
 
-      this.httpClient
-        .request<T>(method, `${environment.endpoint}/${service}/`, body)
-        .pipe(take(1))
-        .subscribe({
-          next: (v) => {
-            observer.next(v);
-            this.log(v);
-          },
-          error: (e) => observer.error(this.handleError(e)),
-          complete: () => {
-            observer.complete();
-            this.loadingTool.dismiss();
-          }
-        });
+  put<T>(service: string, parameters?: T): Observable<T> {
+    return this.request<T>(HttpMethod.PUT, service, parameters);
+  }
+
+  delete<T>(service: string, parameters?: T): Observable<T> {
+    return this.request<T>(HttpMethod.DELETE, service, parameters);
+  }
+
+  private request<T>(method: HttpMethod, service: string, parameters = {}): Observable<T> {
+    return new Observable<T>((observer: Subscriber<T>) => {
+      this.loadingTool.present().then(() => {
+        this.httpClient
+          .request<T>(method, `${environment.endpoint}/${service}/`, parameters)
+          .pipe(take(1))
+          .subscribe({
+            next: (v: T) => {
+              this.log(v);
+              observer.next(v);
+            },
+            error: (e) => observer.error(this.handleError(e)),
+            complete: () => observer.complete()
+          });
+        this.loadingTool.dismiss();
+      });
     });
   }
 
-  private async handleError(e): Promise<MessageType[]> {
+  private async handleError(e: any): Promise<MessageType[]> {
     const errors: MessageType[] = [];
     const error = new MessageType(e.url, e.error, e.data, e.status);
 
@@ -64,6 +73,8 @@ export class ApiService {
     }
 
     errors.push(error);
+
+    this.alertTool.presentError(errors);
 
     return errors;
   }
