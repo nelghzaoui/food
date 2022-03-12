@@ -41,6 +41,7 @@ export class MobileCoreModule {
   private static httpLoaderFactory(http: HttpClient): MultiTranslateHttpLoader {
     return new MultiTranslateHttpLoader(http, [
       { prefix: './assets/i18n/core/', suffix: '.json' },
+      { prefix: './assets/i18n/order/', suffix: '.json' },
       { prefix: './assets/i18n/shared/', suffix: '.json' }
     ]);
   }
