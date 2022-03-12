@@ -1,0 +1,25 @@
+ion-content {
+  .places {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+  ion-text {
+    width: 100%;
+  }
+
+  ion-card {
+    img {
+      margin: 1rem;
+    }
+
+    width: 40%;
+  }
+
+  ion-card::part(native) {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+  }
+}

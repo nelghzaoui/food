@@ -15,6 +15,6 @@ export class HomePage implements OnInit {
   }
 
   onClick(): void {
-    this.navCtrl.navigateForward(['register'], { relativeTo: this.route });
+    this.navCtrl.navigateForward(['order']);
   }
 }

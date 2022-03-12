@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, take } from 'rxjs';
 import { ApiService } from '../../api/api.service';
-import { MobileFood } from '../../../features/order/models/mobile-product.interface';
+import { MobileFood } from '../models/mobile-food.interface';
 
 @Injectable({ providedIn: 'root' })
 export class FoodService {
@@ -11,10 +11,10 @@ export class FoodService {
   foods$ = this.foodsSubject$.asObservable();
 
   constructor(private readonly apiService: ApiService) {
-    this.getAll();
+    this.getAllFoods();
   }
 
-  private getAll() {
+  private getAllFoods() {
     this.apiService
       .get<MobileFood[]>(this.FOOD_API)
       .pipe(take(1))

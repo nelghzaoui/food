@@ -1,0 +1,15 @@
+<ion-content>
+  <ion-text class="ion-text-center" color="dark">
+    <h1>{{ 'order.place.title' | translate }}</h1>
+  </ion-text>
+
+  <div class="places">
+    <ng-container *ngFor="let place of places">
+      <ion-card (click)="onSelect(place)" [routerLink]="['./new']" button="true">
+        <img src="./assets/img/logo/logo.png" />
+        <p>{{ 'order.place.' + place | translate }}</p>
+        <ion-ripple-effect></ion-ripple-effect>
+      </ion-card>
+    </ng-container>
+  </div>
+</ion-content>
