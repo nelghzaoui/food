@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { NavController } from '@ionic/angular';
 
 @Component({
@@ -8,7 +7,7 @@ import { NavController } from '@ionic/angular';
   styleUrls: ['home.page.scss']
 })
 export class HomePage implements OnInit {
-  constructor(private readonly navCtrl: NavController, private readonly route: ActivatedRoute) {}
+  constructor(private readonly navCtrl: NavController) {}
 
   ngOnInit(): void {
     //TODO: This screen should appear only the first time

@@ -6,7 +6,7 @@
   <div class="places">
     <ng-container *ngFor="let place of places">
       <ion-card (click)="onSelect(place)" [routerLink]="['./new']" button="true">
-        <img src="./assets/img/logo/logo.png" />
+        <img src="./assets/icon/place/{{place}}.png" />
         <p>{{ 'order.place.' + place | translate }}</p>
         <ion-ripple-effect></ion-ripple-effect>
       </ion-card>
