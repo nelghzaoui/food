@@ -128,7 +128,7 @@
           "executor": "@angular-devkit/build-angular:browser",
           "outputs": ["{options.outputPath}"],
           "options": {
-            "outputPath": "dist/apps/tacos-mobile",
+            "outputPath": "dist/apps/tacos-mobile/www",
             "index": "apps/tacos-mobile/src/index.html",
             "main": "apps/tacos-mobile/src/main.ts",
             "polyfills": "apps/tacos-mobile/src/polyfills.ts",
