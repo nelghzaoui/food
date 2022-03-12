@@ -7,7 +7,7 @@ export interface OrderState {
 }
 
 export const initialState: OrderState = {
-  selectedPlace: Place.Inside
+  selectedPlace: Place.INSIDE
 };
 
 @Injectable()

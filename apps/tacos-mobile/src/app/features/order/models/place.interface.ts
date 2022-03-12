@@ -1,7 +1,7 @@
 export enum Place {
-  Inside = 'inside',
-  Takeaway = 'takeaway',
-  Delivery = 'delivery'
+  INSIDE = 'inside',
+  TAKEAWAY = 'takeaway',
+  DELIVERY = 'delivery'
 }
 
-export const PLACES = [Place.Inside, Place.Takeaway, Place.Delivery];
+export const PLACES = [Place.INSIDE, Place.TAKEAWAY, Place.DELIVERY];
