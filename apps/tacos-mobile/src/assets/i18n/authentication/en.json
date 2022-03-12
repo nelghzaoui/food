@@ -7,11 +7,6 @@
       "password": "Password",
       "social-network": "Or connect with"
     },
-    "home": {
-      "title": "Welcome",
-      "subtitle": "Create an account and access thousand of cool stuffs",
-      "started": "Getting Started"
-    },
     "registration": {
       "subtitle": "Fill details and create your account",
       "fullname": "Full Name",

@@ -1,13 +1,20 @@
-import { Component } from '@angular/core';
-import { FoodService } from '../../core/food/services/food.service';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'food-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss']
 })
-export class HomePage {
-  constructor(private readonly foodService: FoodService) {}
+export class HomePage implements OnInit {
+  constructor(private readonly navCtrl: NavController, private readonly route: ActivatedRoute) {}
 
-  onCall() {}
+  ngOnInit(): void {
+    //TODO: This screen should appear only the first time
+  }
+
+  onClick(): void {
+    this.navCtrl.navigateForward(['register'], { relativeTo: this.route });
+  }
 }

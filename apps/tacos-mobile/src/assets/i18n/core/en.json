@@ -23,6 +23,11 @@
     },
     "price": {
       "from": "From"
+    },
+    "home": {
+      "title": "Welcome",
+      "subtitle": "Are you hungry ? Let's order your first french tacos",
+      "started": "Getting Started"
     }
   }
 }

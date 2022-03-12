@@ -1,23 +1,12 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title> {{ 'core.buttons.confirm' | translate }} </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content class="ion-padding">
+  <div class="flex-container">
+    <ion-img src="/assets/img/drawings/welcome.svg"></ion-img>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large"> Blank </ion-title>
-    </ion-toolbar>
-  </ion-header>
+    <ion-text class="ion-text-center full-width">
+      <h2>{{ 'core.home.title' | translate }}</h2>
+      <p>{{ 'core.home.subtitle' | translate }}</p>
+    </ion-text>
 
-  <div id="container">
-    <h1>Welcome to tacos-mobile!</h1>
-    <strong>Ready to create an app?</strong>
-    <p>
-      Start with Ionic
-      <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a>
-    </p>
-    <ion-button (click)="onCall()"> Call the server </ion-button>
+    <ion-button (click)="onClick()" class="full-width large-button"> {{ 'core.home.started' | translate }} </ion-button>
   </div>
 </ion-content>
