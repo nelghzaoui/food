@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FoodService } from '../food/services/food.service';
+import { FoodService } from '../../core/food/services/food.service';
 
 @Component({
   selector: 'food-home',
@@ -7,8 +7,6 @@ import { FoodService } from '../food/services/food.service';
   styleUrls: ['home.page.scss']
 })
 export class HomePage {
-  foods$ = this.foodService.foods$;
-
   constructor(private readonly foodService: FoodService) {}
 
   onCall() {}
