@@ -9,7 +9,7 @@ import { OrderService } from '../../services/order.service';
 })
 export class PlacePage implements OnInit {
   Place = Place;
-  places: Place[] = PLACES;
+  places = PLACES;
 
   constructor(private readonly orderService: OrderService) {}
 

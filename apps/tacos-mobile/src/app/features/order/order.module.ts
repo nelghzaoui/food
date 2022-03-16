@@ -1,14 +1,21 @@
 import { NgModule } from '@angular/core';
+/* Modules */
 import { SharedModule } from '../../shared/shared.module';
-import { PlacePage } from './pages/place/place.page';
+import { OrderRouting } from './routes/order.routing';
+/* Providers */
 import { OrderQuery } from './redux/order.query';
 import { OrderStore } from './redux/order.store';
-import { OrderRouting } from './routes/order.routing';
 import { OrderService } from './services/order.service';
+/* Components */
+import { PlacePage } from './pages/place/place.page';
+
+const COMPONENTS = [PlacePage];
+const PROVIDERS = [OrderService, OrderQuery, OrderStore];
+const MODULES = [SharedModule, OrderRouting];
 
 @NgModule({
-  declarations: [PlacePage],
-  providers: [OrderService, OrderQuery, OrderStore],
-  imports: [SharedModule, OrderRouting]
+  declarations: [COMPONENTS],
+  providers: [PROVIDERS],
+  imports: [MODULES]
 })
 export class OrderModule {}
