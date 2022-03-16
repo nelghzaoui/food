@@ -1,3 +1,27 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-router-outlet>
+    <ion-tabs mode="md">
+      <ion-tab-bar slot="bottom">
+        <ion-tab-button tab="home">
+          <ion-icon name="home"></ion-icon>
+          <ion-label>Home</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button tab="order">
+          <ion-icon name="fast-food"></ion-icon>
+          <ion-label>Order</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button tab="basket">
+          <ion-icon name="basket"></ion-icon>
+          <ion-label>Basket</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button tab="plus">
+          <ion-icon name="ellipsis-horizontal"></ion-icon>
+          <ion-label>Plus</ion-label>
+        </ion-tab-button>
+      </ion-tab-bar>
+    </ion-tabs>
+  </ion-router-outlet>
 </ion-app>
