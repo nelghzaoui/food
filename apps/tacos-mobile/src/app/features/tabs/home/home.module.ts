@@ -7,4 +7,4 @@ import { HomeRouting } from './routes/home.routing';
   imports: [SharedModule, HomeRouting],
   declarations: [HomePage]
 })
-export class HomePageModule {}
+export class HomeModule {}
