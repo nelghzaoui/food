@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { BasketPage } from '../views/basket.page';
 
 const routes: Routes = [
   {
-    path: ''
+    path: '',
+    component: BasketPage
   }
 ];
 
