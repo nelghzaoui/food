@@ -6,15 +6,16 @@ import { OrderRouting } from './routes/order.routing';
 import { OrderQuery } from './redux/order.query';
 import { OrderStore } from './redux/order.store';
 import { OrderService } from './services/order.service';
-/* Components */
-import { PlacePage } from './pages/place/place.page';
+/* Views */
+import { OrderPage } from './views/order.page';
+import { PlacePage } from './views/place/place.page';
 
-const COMPONENTS = [PlacePage];
+const VIEWS = [OrderPage, PlacePage];
 const PROVIDERS = [OrderService, OrderQuery, OrderStore];
 const MODULES = [SharedModule, OrderRouting];
 
 @NgModule({
-  declarations: [COMPONENTS],
+  declarations: [VIEWS],
   providers: [PROVIDERS],
   imports: [MODULES]
 })

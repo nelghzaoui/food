@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { PlacePage } from '../pages/place/place.page';
+import { OrderPage } from '../views/order.page';
+import { PlacePage } from '../views/place/place.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: PlacePage
+    component: OrderPage
   },
   {
     path: 'place',
