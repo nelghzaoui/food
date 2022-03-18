@@ -1,5 +1,10 @@
 {
   "core": {
+    "tabs": {
+      "home": "Home",
+      "order": "Order",
+      "basket": "Basket"
+    },
     "items": {
       "empty": "No items available"
     },
@@ -24,7 +29,7 @@
     "price": {
       "from": "From"
     },
-    "home": {
+    "welcome": {
       "title": "Welcome",
       "subtitle": "Are you hungry ? Let's order your first french tacos",
       "started": "Getting Started"

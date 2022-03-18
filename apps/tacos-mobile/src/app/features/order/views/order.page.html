@@ -1,8 +1,5 @@
 <ion-header>
-  <food-shared-toolbar-component
-    *ngIf="(currentFlow$ | async) === OrderFlow.TACOS"
-    [title]="'order.new-order.title.default'  | translate"
-  ></food-shared-toolbar-component>
+  <food-shared-toolbar-component [title]="'order.new-order.title.default'  | translate"></food-shared-toolbar-component>
   <ion-segment
     color="secondary"
     (ionChange)="onSegmentChange($event)"
@@ -33,6 +30,9 @@
   [title]="'order.new-order.title.step'  | translate: { step : (currentStep$ | async) }"
 ></toolbar-component> -->
 
+<ion-content>
+  <food-order-place></food-order-place>
+</ion-content>
 <!-- <ion-content>
   <order-tacos *ngIf="(currentFlow$ | async) === OrderFlow.Tacos"></order-tacos>
   <order-drinks *ngIf="(currentFlow$ | async) === OrderFlow.Drink"></order-drinks>
