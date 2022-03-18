@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { IsFirstLaunch } from './core/guards/first-launch.guard';
 
 const routes: Routes = [
   {
     path: 'welcome',
-    loadChildren: () => import('./features/welcome/welcome.module').then((m) => m.WelcomeModule)
+    loadChildren: () => import('./features/welcome/welcome.module').then((m) => m.WelcomeModule),
+    canActivate: [IsFirstLaunch]
   },
   {
     path: 'home',
@@ -24,7 +26,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'welcome',
     pathMatch: 'full'
   }
 ];
