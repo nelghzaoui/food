@@ -4,7 +4,8 @@
     "@capacitor/android": "3.4.1",
     "@capacitor/core": "3.4.1",
     "@capacitor/ios": "3.4.1",
-    "@capacitor/network": "1.0.7"
+    "@capacitor/network": "1.0.7",
+    "@capacitor/storage": "1.2.5"
   },
   "devDependencies": {
     "@capacitor/cli": "3.4.1"
