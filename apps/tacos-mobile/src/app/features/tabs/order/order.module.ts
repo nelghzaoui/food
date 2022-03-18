@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 /* Modules */
-import { SharedModule } from '../../shared/shared.module';
+import { SharedModule } from '../../../shared/shared.module';
 import { OrderRouting } from './routes/order.routing';
 /* Providers */
 import { OrderQuery } from './redux/order.query';

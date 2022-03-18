@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 /* Modules */
-import { SharedModule } from '../../shared/shared.module';
+import { SharedModule } from '../../../shared/shared.module';
 import { BasketRouting } from './routes/basket.routing';
 import { BasketPage } from './views/basket.page';
 
