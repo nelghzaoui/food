@@ -1,5 +1,7 @@
-<ion-app>
-  <ion-router-outlet>
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  template: `
     <ion-tabs>
       <ion-tab-bar mode="md" color="primary" slot="bottom">
         <ion-tab-button tab="home">
@@ -23,5 +25,10 @@
         </ion-tab-button>
       </ion-tab-bar>
     </ion-tabs>
-  </ion-router-outlet>
-</ion-app>
+  `
+})
+export class TabsLayoutPage implements OnInit {
+  constructor() {}
+
+  ngOnInit(): void {}
+}
