@@ -1,0 +1,47 @@
+<ion-header>
+  <food-shared-toolbar-component
+    *ngIf="(currentFlow$ | async) === OrderFlow.TACOS"
+    [title]="'order.new-order.title.default'  | translate"
+  ></food-shared-toolbar-component>
+  <ion-segment
+    color="secondary"
+    (ionChange)="onSegmentChange($event)"
+    [value]="currentFlow$ | async"
+    scrollable="true"
+    mode="md"
+  >
+    <ion-segment-button [value]="OrderFlow.TACOS">
+      <ion-icon name="fast-food"></ion-icon>
+      <ion-label>{{ 'order.new-order.segment.tacos' | translate }}</ion-label>
+    </ion-segment-button>
+    <ion-segment-button [value]="OrderFlow.DRINK">
+      <ion-icon name="pint"></ion-icon>
+      <ion-label>{{ 'order.new-order.segment.drinks' | translate }}</ion-label>
+    </ion-segment-button>
+    <ion-segment-button [value]="OrderFlow.FINGER">
+      <ion-icon name="nutrition"></ion-icon>
+      <ion-label>{{ 'order.new-order.segment.fingers' | translate}}</ion-label>
+    </ion-segment-button>
+    <ion-segment-button [value]="OrderFlow.DESSERT">
+      <ion-icon name="ice-cream"></ion-icon>
+      <ion-label>{{ 'order.new-order.segment.dessert' | translate}}</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+</ion-header>
+<!-- <toolbar-component
+  *ngIf="(currentFlow$ | async) === OrderFlow.TACOS"
+  [title]="'order.new-order.title.step'  | translate: { step : (currentStep$ | async) }"
+></toolbar-component> -->
+
+<!-- <ion-content>
+  <order-tacos *ngIf="(currentFlow$ | async) === OrderFlow.Tacos"></order-tacos>
+  <order-drinks *ngIf="(currentFlow$ | async) === OrderFlow.Drink"></order-drinks>
+  <order-fingers *ngIf="(currentFlow$ | async) === OrderFlow.Finger"></order-fingers>
+  <order-desserts *ngIf="(currentFlow$ | async) === OrderFlow.Dessert"></order-desserts>
+</ion-content> -->
+
+<ion-footer>
+  <ion-button (click)="onShowOrder()" class="summary" expand="full" color="secondary">
+    {{ 'order.new-order.summary' | translate }}
+  </ion-button>
+</ion-footer>
