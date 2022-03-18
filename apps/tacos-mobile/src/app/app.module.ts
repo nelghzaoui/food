@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
-import { AppComponent } from './app.component';
 import { MobileCoreModule } from '@food/mobile/core/modules';
+import { AppComponent } from './app.component';
 import { AppRouting } from './app.routing';
 
 @NgModule({
