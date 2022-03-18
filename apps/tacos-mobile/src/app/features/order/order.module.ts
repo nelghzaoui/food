@@ -8,9 +8,9 @@ import { OrderStore } from './redux/order.store';
 import { OrderService } from './services/order.service';
 /* Views */
 import { OrderPage } from './views/order.page';
-import { PlacePage } from './views/place/place.page';
+import { PlaceComponent } from './views/place/place.component';
 
-const VIEWS = [OrderPage, PlacePage];
+const VIEWS = [OrderPage, PlaceComponent];
 const PROVIDERS = [OrderService, OrderQuery, OrderStore];
 const MODULES = [SharedModule, OrderRouting];
 

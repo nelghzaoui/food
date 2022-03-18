@@ -4,10 +4,10 @@ import { OrderService } from '../../services/order.service';
 
 @Component({
   selector: 'food-order-place',
-  templateUrl: './place.page.html',
-  styleUrls: ['./place.page.scss']
+  templateUrl: './place.component.html',
+  styleUrls: ['./place.component.scss']
 })
-export class PlacePage implements OnInit {
+export class PlaceComponent implements OnInit {
   Place = Place;
   places = PLACES;
 

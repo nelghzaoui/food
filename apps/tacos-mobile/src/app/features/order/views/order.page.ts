@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SegmentCustomEvent } from '@ionic/angular';
 import { OrderFlow } from '../models/order-flow.enum';
 import { OrderService } from '../services/order.service';
 import { OrderQuery } from '../redux/order.query';
@@ -15,11 +16,7 @@ export class OrderPage implements OnInit {
 
   ngOnInit(): void {}
 
-  onSegmentChange(event: any): void {
-    this.orderService.update({ currentFlow: event.detail.value });
-  }
-
-  onShowOrder(): void {
-    console.log('show my order', this.orderQuery.getValue());
+  onSegmentChange(event: Event) {
+    this.orderService.update({ currentFlow: (event as SegmentCustomEvent).detail.value as OrderFlow });
   }
 }

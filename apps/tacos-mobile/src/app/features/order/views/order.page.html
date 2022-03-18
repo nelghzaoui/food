@@ -25,10 +25,6 @@
     </ion-segment-button>
   </ion-segment>
 </ion-header>
-<!-- <toolbar-component
-  *ngIf="(currentFlow$ | async) === OrderFlow.TACOS"
-  [title]="'order.new-order.title.step'  | translate: { step : (currentStep$ | async) }"
-></toolbar-component> -->
 
 <ion-content>
   <food-order-place></food-order-place>
@@ -39,9 +35,3 @@
   <order-fingers *ngIf="(currentFlow$ | async) === OrderFlow.Finger"></order-fingers>
   <order-desserts *ngIf="(currentFlow$ | async) === OrderFlow.Dessert"></order-desserts>
 </ion-content> -->
-
-<ion-footer>
-  <ion-button (click)="onShowOrder()" class="summary" expand="full" color="secondary">
-    {{ 'order.new-order.summary' | translate }}
-  </ion-button>
-</ion-footer>
