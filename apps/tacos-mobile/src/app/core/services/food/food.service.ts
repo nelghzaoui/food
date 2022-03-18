@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, take } from 'rxjs';
-import { ApiService } from '../../api/api.service';
-import { MobileFood } from '../models/mobile-food.interface';
+import { ApiService } from '../api/api.service';
+import { MobileFood } from './models/mobile-food.interface';
 
 @Injectable({ providedIn: 'root' })
 export class FoodService {

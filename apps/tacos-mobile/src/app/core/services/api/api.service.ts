@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Network } from '@capacitor/network';
 import { Platform } from '@ionic/angular';
 import { Observable, Subscriber, take } from 'rxjs';
-import { environment } from '../../../environments/environment';
+import { environment } from '../../../../environments/environment';
 import { AlertTool } from '../ui/alert.tool';
 import { LoadingTool } from '../ui/loading.tool';
 import { ErrorStatus } from './models/error-status.enum';
