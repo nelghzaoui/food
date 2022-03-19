@@ -136,5 +136,15 @@
     "name": "sundae",
     "category": "dessert",
     "price": 2.5
+  },
+  {
+    "name": "classic",
+    "category": "tacos",
+    "price": 6.0
+  },
+  {
+    "name": "gratin",
+    "category": "tacos",
+    "price": 7.5
   }
 ]
