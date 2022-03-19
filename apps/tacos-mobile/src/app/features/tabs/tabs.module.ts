@@ -29,6 +29,11 @@ export class TabsModule {
         {
           path: 'plus',
           loadChildren: () => import('./plus/plus.module').then((m) => m.PlusModule)
+        },
+        {
+          path: '',
+          redirectTo: 'home',
+          pathMatch: 'full'
         }
       ]
     }

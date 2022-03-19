@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   template: `
     <ion-tabs>
-      <ion-tab-bar mode="md" color="primary" slot="bottom">
+      <ion-tab-bar mode="md" color="primary">
         <ion-tab-button tab="home">
           <ion-icon name="home"></ion-icon>
           <ion-label>Home</ion-label>
