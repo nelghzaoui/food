@@ -6,7 +6,13 @@ import { PlaceComponent } from '../views/place/place.component';
 const routes: Routes = [
   {
     path: '',
-    component: OrderPage
+    component: OrderPage,
+    children: [
+      {
+        path: 'tacos',
+        loadChildren: () => import('../views/tacos/tacos.module').then((m) => m.TacosModule)
+      }
+    ]
   },
   {
     path: 'place',
