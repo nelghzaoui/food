@@ -12,7 +12,7 @@ export class IsFirstLaunch implements CanActivate {
     const isFirstLaunch = await this.storageService.isFirstLaunch();
 
     if (!isFirstLaunch) {
-      this.router.navigate(['/home']);
+      this.router.navigate(['/tabs']);
     }
 
     return isFirstLaunch;

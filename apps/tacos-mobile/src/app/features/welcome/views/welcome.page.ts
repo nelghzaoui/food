@@ -14,6 +14,6 @@ export class WelcomePage implements OnInit {
   }
 
   onClick(): void {
-    this.navCtrl.navigateForward(['home']);
+    this.navCtrl.navigateForward(['tabs']);
   }
 }
