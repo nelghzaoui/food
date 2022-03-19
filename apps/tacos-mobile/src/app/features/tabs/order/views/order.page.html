@@ -1,4 +1,4 @@
-<ion-header>
+<!-- <ion-header>
   <food-shared-toolbar-component [title]="'order.new-order.title.default'  | translate"></food-shared-toolbar-component>
   <ion-segment
     color="secondary"
@@ -24,14 +24,28 @@
       <ion-label>{{ 'order.new-order.segment.dessert' | translate}}</ion-label>
     </ion-segment-button>
   </ion-segment>
-</ion-header>
+</ion-header> -->
 
-<ion-content>
-  <food-order-place></food-order-place>
-</ion-content>
-<!-- <ion-content>
-  <order-tacos *ngIf="(currentFlow$ | async) === OrderFlow.Tacos"></order-tacos>
-  <order-drinks *ngIf="(currentFlow$ | async) === OrderFlow.Drink"></order-drinks>
-  <order-fingers *ngIf="(currentFlow$ | async) === OrderFlow.Finger"></order-fingers>
-  <order-desserts *ngIf="(currentFlow$ | async) === OrderFlow.Dessert"></order-desserts>
-</ion-content> -->
+<ion-tabs>
+  <ion-tab-bar slot="top" mode="md" color="primary">
+    <ion-tab-button tab="tacos">
+      <ion-icon name="home"></ion-icon>
+      <ion-label>Home</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="order">
+      <ion-icon name="fast-food"></ion-icon>
+      <ion-label>Order</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="basket" disabled="true">
+      <ion-icon name="basket"></ion-icon>
+      <ion-label>Basket</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="plus" disabled="true">
+      <ion-icon name="ellipsis-horizontal"></ion-icon>
+      <ion-label>Plus</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>
