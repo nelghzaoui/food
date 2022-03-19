@@ -1,0 +1,14 @@
+.steps-container {
+  flex-direction: column;
+  height: 100%;
+  padding: 2rem;
+
+  ion-card-header,
+  ion-card-content {
+    text-align: center;
+
+    img {
+      max-width: 40%;
+    }
+  }
+}

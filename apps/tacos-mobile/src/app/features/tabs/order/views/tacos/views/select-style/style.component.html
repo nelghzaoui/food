@@ -1,0 +1,10 @@
+<div class="steps-container">
+  <ion-card mode="ios" *ngFor="let style of styles$ | async" (click)="onSelect(style)" button="true">
+    <ion-card-content>
+      <img src="./assets/img/tacos/{{ style.name }}.png" />
+      <ion-card-title>{{ 'order.tacos.step-style.' + style.name | translate }}</ion-card-title>
+      <ion-card-subtitle>{{ 'core.price.from' | translate }} {{ style.price | currency: 'EUR' }}</ion-card-subtitle>
+    </ion-card-content>
+    <ion-ripple-effect></ion-ripple-effect>
+  </ion-card>
+</div>
