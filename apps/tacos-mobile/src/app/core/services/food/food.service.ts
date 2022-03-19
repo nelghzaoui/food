@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, take } from 'rxjs';
+import { FoodCategory } from '@food/shared/models/food';
+import { BehaviorSubject, map, mapTo, take } from 'rxjs';
 import { ApiService } from '../api/api.service';
 import { MobileFood } from './models/mobile-food.interface';
 
@@ -19,5 +20,15 @@ export class FoodService {
       .get<MobileFood[]>(this.FOOD_API)
       .pipe(take(1))
       .subscribe((foods: MobileFood[]) => this.foodsSubject$.next(foods));
+  }
+
+  getTacos() {
+    this.apiService
+      .get<MobileFood[]>(this.FOOD_API)
+      .pipe(
+        take(1),
+        map((foods) => foods.filter((r) => r.category === FoodCategory.TACOS))
+      )
+      .subscribe((tacos: MobileFood[]): void => console.log(tacos));
   }
 }
