@@ -1,4 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { NavController, SegmentCustomEvent } from '@ionic/angular';
 import { take } from 'rxjs/operators';
 import { AlertTool } from '../../../../../../core/services/ui/alert.tool';
 import { TacosQuery } from '../redux/tacos.query';
@@ -19,11 +21,17 @@ export class TacosComponent implements OnInit, OnDestroy {
 
   constructor(
     private readonly alertTool: AlertTool,
+    private readonly route: ActivatedRoute,
+    private readonly navCtrl: NavController,
     private readonly tacosQuery: TacosQuery,
     private readonly tacosService: TacosService
   ) {}
 
   ngOnInit(): void {}
+
+  onSegmentChange(event: Event) {
+    this.navCtrl.navigateForward([(event as SegmentCustomEvent).detail.value], { relativeTo: this.route });
+  }
 
   ngOnDestroy(): void {
     this.currentStep$.pipe(take(1)).subscribe((currentStep: TacosStep) => {

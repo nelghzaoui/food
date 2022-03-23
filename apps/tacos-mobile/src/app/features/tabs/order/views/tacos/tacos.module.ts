@@ -15,8 +15,8 @@ const PROVIDERS = [TacosService, TacosQuery, TacosStore];
 const MODULES = [SharedModule, TacosRouting];
 
 @NgModule({
+  imports: [MODULES],
   declarations: [VIEWS],
-  providers: [PROVIDERS],
-  imports: [MODULES]
+  providers: [PROVIDERS]
 })
 export class TacosModule {}

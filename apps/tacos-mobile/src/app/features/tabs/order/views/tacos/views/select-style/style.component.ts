@@ -14,7 +14,7 @@ export class StyleComponent {
 
   constructor(private readonly tacosService: TacosService, private readonly tacosQuery: TacosQuery) {}
 
-  onSelect(selectedStyle: TacosStyle): void {
+  onSelect(selectedStyle: TacosStyle) {
     this.tacosService.update({
       currentStep: TacosStep.SIZE
     });
