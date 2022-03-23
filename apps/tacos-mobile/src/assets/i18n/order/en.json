@@ -1,5 +1,15 @@
 {
   "order": {
+    "main": {
+      "title": "What do you want to order ?",
+      "menu": "Menu",
+      "tacos": "Tacos",
+      "drink": "Drinks",
+      "finger": "Fingers",
+      "dessert": "Desserts",
+      "salad": "Salads"
+    },
+
     "new-order": {
       "title": {
         "default": "Your current order",
