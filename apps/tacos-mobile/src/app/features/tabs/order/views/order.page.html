@@ -1,51 +1,15 @@
-<!-- <ion-header>
-  <food-shared-toolbar-component [title]="'order.new-order.title.default'  | translate"></food-shared-toolbar-component>
-  <ion-segment
-    color="secondary"
-    (ionChange)="onSegmentChange($event)"
-    [value]="currentFlow$ | async"
-    scrollable="true"
-    mode="md"
-  >
-    <ion-segment-button [value]="OrderFlow.TACOS">
-      <ion-icon name="fast-food"></ion-icon>
-      <ion-label>{{ 'order.new-order.segment.tacos' | translate }}</ion-label>
-    </ion-segment-button>
-    <ion-segment-button [value]="OrderFlow.DRINK">
-      <ion-icon name="pint"></ion-icon>
-      <ion-label>{{ 'order.new-order.segment.drinks' | translate }}</ion-label>
-    </ion-segment-button>
-    <ion-segment-button [value]="OrderFlow.FINGER">
-      <ion-icon name="nutrition"></ion-icon>
-      <ion-label>{{ 'order.new-order.segment.fingers' | translate}}</ion-label>
-    </ion-segment-button>
-    <ion-segment-button [value]="OrderFlow.DESSERT">
-      <ion-icon name="ice-cream"></ion-icon>
-      <ion-label>{{ 'order.new-order.segment.dessert' | translate}}</ion-label>
-    </ion-segment-button>
-  </ion-segment>
-</ion-header> -->
+<ion-content>
+  <ion-text class="ion-text-center" color="dark">
+    <h1>{{ 'order.main.title' | translate }}</h1>
+  </ion-text>
 
-<ion-tabs>
-  <ion-tab-bar slot="top" mode="md" color="primary">
-    <ion-tab-button tab="tacos">
-      <ion-icon name="home"></ion-icon>
-      <ion-label>Home</ion-label>
-    </ion-tab-button>
-
-    <ion-tab-button tab="order">
-      <ion-icon name="fast-food"></ion-icon>
-      <ion-label>Order</ion-label>
-    </ion-tab-button>
-
-    <ion-tab-button tab="basket" disabled="true">
-      <ion-icon name="basket"></ion-icon>
-      <ion-label>Basket</ion-label>
-    </ion-tab-button>
-
-    <ion-tab-button tab="plus" disabled="true">
-      <ion-icon name="ellipsis-horizontal"></ion-icon>
-      <ion-label>Plus</ion-label>
-    </ion-tab-button>
-  </ion-tab-bar>
-</ion-tabs>
+  <div class="places">
+    <ng-container *ngFor="let flow of flows">
+      <ion-card (click)="onSelect(flow)" button="true">
+        <img src="./assets/icon/flow/{{flow}}.png" />
+        <p>{{ 'order.main.' + flow | translate }}</p>
+        <ion-ripple-effect></ion-ripple-effect>
+      </ion-card>
+    </ng-container>
+  </div>
+</ion-content>
