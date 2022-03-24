@@ -9,32 +9,15 @@
       "dessert": "Desserts",
       "salad": "Salads"
     },
-
-    "new-order": {
-      "title": {
-        "default": "Your current order",
-        "step": "Choose your {{ step }}"
-      },
-      "segment": {
-        "tacos": "Tacos",
-        "drinks": "Drinks",
-        "fingers": "Fingers",
-        "dessert": "Dessert"
-      },
-      "summary": "Show my order"
-    },
-    "place": {
-      "title": "Select your place",
-      "inside": "Inside",
-      "takeaway": "Takeaway",
-      "delivery": "Delivery"
-    },
+    "menu": {},
     "tacos": {
-      "step-style": {
+      "style": {
+        "name": "Tacos",
         "classic": "Classic Tacos",
         "gratin": "Gratin Tacos"
       },
-      "step-size": {
+      "size": {
+        "name": "Size",
         "simple": "Simple",
         "double": "Double",
         "maxi": "Maxi",
@@ -43,7 +26,8 @@
         "meats": "{{ number }} meats",
         "extra-info": " 2 kg"
       },
-      "step-meat": {
+      "meat": {
+        "name": "Meat",
         "hamburger": "Hamburger",
         "chicken": "Chicken",
         "cordon-bleu": "Cordon Bleu",
@@ -56,7 +40,8 @@
         "veggie-burger": "Veggie Burger",
         "rosti": "Rosti"
       },
-      "step-sauce": {
+      "sauce": {
+        "name": "Sauce",
         "mayo": "Mayonnaise",
         "ketchup": "Ketchup",
         "andalouse": "Andalouse",
@@ -74,7 +59,8 @@
         "chili-thai": "Chili Thai",
         "harissa": "Harissa"
       },
-      "step-garnish": {
+      "garnish": {
+        "name": "Garnish",
         "tomato": "Tomato",
         "pepper": "Pepper",
         "cheddar": "Cheddar",
@@ -82,7 +68,8 @@
         "jalapenos": "Jalapenos",
         "egg": "Egg"
       },
-      "step-gratin": {
+      "gratin": {
+        "name": "Gratin",
         "emmental": "Emmental",
         "cheddar": "Cheddar",
         "raclette": "Raclette",
@@ -90,6 +77,19 @@
         "reblochon": "Reblochon",
         "mozza": "Mozzarella"
       }
+    },
+    "new-order": {
+      "title": {
+        "default": "Your current order",
+        "step": "Choose your {{ step }}"
+      },
+      "summary": "Show my order"
+    },
+    "place": {
+      "title": "Select your place",
+      "inside": "Inside",
+      "takeaway": "Takeaway",
+      "delivery": "Delivery"
     }
   }
 }
