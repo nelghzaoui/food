@@ -12,7 +12,7 @@
     "menu": {},
     "tacos": {
       "style": {
-        "name": "Tacos",
+        "name": "Style",
         "classic": "Classic Tacos",
         "gratin": "Gratin Tacos"
       },

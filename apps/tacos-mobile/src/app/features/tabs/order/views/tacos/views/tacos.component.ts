@@ -1,44 +1,27 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { NavController, SegmentCustomEvent } from '@ionic/angular';
-import { take } from 'rxjs/operators';
-import { AlertTool } from '../../../../../../core/services/ui/alert.tool';
+import { Component, OnInit } from '@angular/core';
+import { SegmentCustomEvent } from '@ionic/angular';
 import { TacosQuery } from '../redux/tacos.query';
 import { TacosService } from '../services/tacos.service';
 import { Style } from '../models/style.interface';
-import { TacosStep } from '../models/step.enum';
+import { STEPS, TacosStep } from '../models/step.enum';
 
 @Component({
   selector: 'food-order-tacos',
   templateUrl: './tacos.component.html',
   styleUrls: ['./tacos.component.scss']
 })
-export class TacosComponent implements OnInit, OnDestroy {
+export class TacosComponent implements OnInit {
+  STEPS = STEPS;
   TacosStep = TacosStep;
   TacosStyle = Style;
 
   currentStep$ = this.tacosQuery.currentStep$;
 
-  constructor(
-    private readonly alertTool: AlertTool,
-    private readonly route: ActivatedRoute,
-    private readonly navCtrl: NavController,
-    private readonly tacosQuery: TacosQuery,
-    private readonly tacosService: TacosService
-  ) {}
+  constructor(private readonly tacosQuery: TacosQuery, private readonly tacosService: TacosService) {}
 
   ngOnInit(): void {}
 
   onSegmentChange(event: Event) {
-    this.navCtrl.navigateForward([(event as SegmentCustomEvent).detail.value], { relativeTo: this.route });
-  }
-
-  ngOnDestroy(): void {
-    this.currentStep$.pipe(take(1)).subscribe((currentStep: TacosStep) => {
-      if (currentStep !== TacosStep.STYLE) {
-        this.alertTool.present('If you continue, you will lose your tacos', 'Yes', undefined, 'No');
-      }
-      this.tacosService.reset();
-    });
+    this.tacosService.update({ currentStep: (event as SegmentCustomEvent).detail.value as TacosStep });
   }
 }

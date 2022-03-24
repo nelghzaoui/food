@@ -7,31 +7,13 @@
     scrollable="true"
     mode="md"
   >
-    <ion-segment-button [value]="TacosStep.STYLE">
-      <ion-icon name="fast-food"></ion-icon>
-      <ion-label>{{ 'order.new-order.segment.tacos' | translate }}</ion-label>
-    </ion-segment-button>
-    <ion-segment-button [value]="TacosStep.SIZE">
-      <ion-icon name="pint"></ion-icon>
-      <ion-label>{{ 'order.new-order.segment.drinks' | translate }}</ion-label>
-    </ion-segment-button>
-    <ion-segment-button [value]="TacosStep.SAUCE">
-      <ion-icon name="nutrition"></ion-icon>
-      <ion-label>{{ 'order.new-order.segment.fingers' | translate }}</ion-label>
-    </ion-segment-button>
-    <ion-segment-button [value]="TacosStep.MEAT">
-      <ion-icon name="ice-cream"></ion-icon>
-      <ion-label>{{ 'order.new-order.segment.dessert' | translate }}</ion-label>
-    </ion-segment-button>
-    <ion-segment-button [value]="TacosStep.GARNISH">
-      <ion-icon name="menu"></ion-icon>
-      <ion-label>{{ 'order.new-order.segment.dessert' | translate }}</ion-label>
-    </ion-segment-button>
-    <ion-segment-button [value]="TacosStep.GRATIN">
-      <ion-icon name="menu"></ion-icon>
-      <ion-label>{{ 'order.new-order.segment.dessert' | translate }}</ion-label>
+    <ion-segment-button *ngFor="let step of STEPS" [value]="step">
+      <ion-icon name="eyedrop"></ion-icon>
+      <ion-label>{{ 'order.tacos.' + step + '.name' | translate }}</ion-label>
     </ion-segment-button>
   </ion-segment>
 </ion-header>
 
-<ion-content> <p>works!</p></ion-content>
+<ion-content>
+  <food-order-tacos-style *ngIf="(currentStep$ | async) === TacosStep.STYLE"></food-order-tacos-style>
+</ion-content>
