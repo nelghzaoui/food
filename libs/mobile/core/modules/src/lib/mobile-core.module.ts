@@ -9,7 +9,7 @@ import { RouteReuseStrategy } from '@angular/router';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { MultiTranslateHttpLoader } from 'ngx-translate-multi-http-loader';
 import { AkitaNgDevtools } from '@datorama/akita-ngdevtools';
-import { IonicRouteStrategy } from '@ionic/angular';
+import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { Currency, Language } from '@food/shared/models/environment';
 import { MobileCoreRouting } from './routes/mobile-core.routing';
 
@@ -22,8 +22,9 @@ registerLocaleData(localeEN, localeFR, localeNL);
 export class MobileCoreModule {
   private static MODULES = [
     BrowserModule,
-    MobileCoreRouting,
+    IonicModule.forRoot(),
     AkitaNgDevtools.forRoot(),
+    MobileCoreRouting,
     HttpClientModule,
     TranslateModule.forRoot({
       defaultLanguage: Language.EN,
