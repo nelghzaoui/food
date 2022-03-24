@@ -1,16 +1,25 @@
-import { NgModule } from '@angular/core';
+import { NgModule, APP_INITIALIZER } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 import { MobileCoreModule } from '@food/mobile/core/modules';
 import { AppComponent } from './app.component';
 import { IsFirstLaunch } from './core/guards/first-launch.guard';
+import { FoodService } from './core/services/food/food.service';
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
+  providers: [
+    {
+      provide: APP_INITIALIZER,
+      useFactory: (f: FoodService) => () => f.init(),
+      deps: [FoodService],
+      multi: true
+    }
+  ],
   imports: [
-    IonicModule.forRoot(),
     MobileCoreModule,
+    IonicModule,
     RouterModule.forRoot(AppModule.ROUTES, { preloadingStrategy: PreloadAllModules })
   ],
   bootstrap: [AppComponent]
