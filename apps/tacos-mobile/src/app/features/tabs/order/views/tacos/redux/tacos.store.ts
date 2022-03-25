@@ -1,21 +1,31 @@
 import { Injectable } from '@angular/core';
 import { EntityStore, StoreConfig } from '@datorama/akita';
-import { TacosStep } from '../models/step.enum';
+import { Step } from '../models/step.enum';
 import { MobileFood } from '../../../../../../core/services/food/models/mobile-food.interface';
 import { Style } from '../models/style.interface';
 
 export interface TacosState {
-  currentStep: TacosStep;
+  currentStep: Step;
   /* Choices */
   styles: MobileFood[];
+  sizes: MobileFood[];
+  meats: MobileFood[];
+  sauces: MobileFood[];
+  garnishes: MobileFood[];
+  gratins: MobileFood[];
   /* Selected */
   selectedStyle: Style;
 }
 
 export const initialState: TacosState = {
-  currentStep: TacosStep.STYLE,
+  currentStep: Step.STYLE,
   /* Choices */
   styles: [],
+  sizes: [],
+  meats: [],
+  sauces: [],
+  garnishes: [],
+  gratins: [],
   /* Selected */
   selectedStyle: Style.CLASSIC
 };

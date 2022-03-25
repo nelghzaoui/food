@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TacosStep } from '../../models/step.enum';
+import { Step } from '../../models/step.enum';
 import { TacosService } from '../../services/tacos.service';
 import { TacosQuery } from '../../redux/tacos.query';
 import { Style } from '../../models/style.interface';
@@ -10,7 +10,7 @@ import { Style } from '../../models/style.interface';
   styleUrls: ['./style.component.scss']
 })
 export class StyleComponent {
-  TacosStep = TacosStep;
+  Step = Step;
 
   styles$ = this.tacosQuery.styles$;
 
@@ -18,7 +18,7 @@ export class StyleComponent {
 
   onSelect(selectedStyle: string) {
     this.tacosService.update({
-      currentStep: TacosStep.SIZE,
+      currentStep: Step.SIZE,
       selectedStyle: selectedStyle as Style
     });
   }

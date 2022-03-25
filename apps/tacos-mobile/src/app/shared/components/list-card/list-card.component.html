@@ -1,0 +1,8 @@
+<div class="steps-container">
+  <ion-card *ngFor="let food of foods; let i = index" (click)="onSelect(food)" button="true">
+    <img [src]="food.imagePath" />
+    <ion-card-title>{{ getLabelPath(food) | translate }}</ion-card-title>
+    <p *ngIf="food.allergens && food.allergens.length > 0">{{ food.allergens }}</p>
+    <ion-ripple-effect></ion-ripple-effect>
+  </ion-card>
+</div>

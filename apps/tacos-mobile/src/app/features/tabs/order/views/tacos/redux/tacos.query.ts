@@ -10,6 +10,11 @@ import { TacosState, TacosStore } from './tacos.store';
 export class TacosQuery extends QueryEntity<TacosState> {
   currentStep$ = this.select('currentStep');
   styles$ = this.select('styles');
+  sizes$ = this.select('sizes');
+  meats$ = this.select('meats');
+  sauces$ = this.select('sauces');
+  garnishes$ = this.select('garnishes');
+  gratins$ = this.select('gratins');
 
   constructor(protected store: TacosStore, private readonly coreQuery: CoreQuery) {
     super(store);
@@ -18,7 +23,7 @@ export class TacosQuery extends QueryEntity<TacosState> {
 
   private getStyles() {
     this.coreQuery.foods$
-      .pipe(map((foods: MobileFood[]) => foods.filter((r) => r.category === FoodCategory.TACOS)))
+      .pipe(map((foods: MobileFood[]) => foods.filter((r) => r.category === FoodCategory.STYLE)))
       .subscribe((foods) => this.store.update({ styles: foods }));
   }
 }

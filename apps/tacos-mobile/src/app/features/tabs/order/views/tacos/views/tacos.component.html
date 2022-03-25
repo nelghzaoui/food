@@ -15,5 +15,34 @@
 </ion-header>
 
 <ion-content>
-  <food-order-tacos-style *ngIf="(currentStep$ | async) === TacosStep.STYLE"></food-order-tacos-style>
+  <food-shared-list-card
+    *ngIf="(currentStep$ | async) === Step.STYLE"
+    [foods]="styles$ | async"
+    (selected)="onSelect($event)"
+  ></food-shared-list-card>
+  <food-shared-list-card
+    *ngIf="(currentStep$ | async) === Step.SIZE"
+    [foods]="sizes$ | async"
+    (selected)="onSelect($event)"
+  ></food-shared-list-card>
+  <food-shared-list-card
+    *ngIf="(currentStep$ | async) === Step.MEAT"
+    [foods]="meats$ | async"
+    (selected)="onSelect($event)"
+  ></food-shared-list-card>
+  <food-shared-list-card
+    *ngIf="(currentStep$ | async) === Step.SAUCE"
+    [foods]="sauces$ | async"
+    (selected)="onSelect($event)"
+  ></food-shared-list-card>
+  <food-shared-list-card
+    *ngIf="(currentStep$ | async) === Step.GARNISH"
+    [foods]="garnishes$ | async"
+    (selected)="onSelect($event)"
+  ></food-shared-list-card>
+  <food-shared-list-card
+    *ngIf="(currentStep$ | async) === Step.GRATIN"
+    [foods]="gratins$ | async"
+    (selected)="onSelect($event)"
+  ></food-shared-list-card>
 </ion-content>

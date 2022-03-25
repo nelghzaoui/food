@@ -14,7 +14,7 @@ export enum FoodCategory {
   FINGER = 'finger',
   DRINK = 'drink',
   DESSERT = 'dessert',
-  TACOS = 'tacos'
+  STYLE = 'style'
 }
 
 export const FOOD_CATEGORY = [
@@ -25,5 +25,5 @@ export const FOOD_CATEGORY = [
   FoodCategory.DRINK,
   FoodCategory.DESSERT,
   FoodCategory.FINGER,
-  FoodCategory.TACOS
+  FoodCategory.STYLE
 ];

@@ -1,0 +1,20 @@
+.steps-container {
+  flex-wrap: wrap;
+  justify-content: space-evenly !important;
+
+  ion-card {
+    img {
+      margin: 1rem;
+      max-width: 30%;
+    }
+
+    width: 40%;
+    margin: 7px;
+  }
+
+  ion-card::part(native) {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+  }
+}
