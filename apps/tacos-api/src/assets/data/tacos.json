@@ -1,0 +1,74 @@
+[
+  {
+    "name": "mayo",
+    "category": "sauce"
+  },
+  {
+    "name": "ketchup",
+    "category": "sauce"
+  },
+  {
+    "name": "andalouse",
+    "category": "sauce"
+  },
+  {
+    "name": "barbecue",
+    "category": "sauce"
+  },
+  {
+    "name": "minced-meat",
+    "category": "meat"
+  },
+  {
+    "name": "chicken",
+    "category": "meat"
+  },
+  {
+    "name": "tenders",
+    "category": "meat"
+  },
+  {
+    "name": "nuggets",
+    "category": "meat"
+  },
+  {
+    "name": "jalapenos",
+    "category": "garnish",
+    "price": 0.8
+  },
+  {
+    "name": "egg",
+    "category": "garnish",
+    "price": 0.8
+  },
+  {
+    "name": "cheddar",
+    "category": "garnish",
+    "price": 0.5
+  },
+  {
+    "name": "mozza",
+    "category": "garnish",
+    "price": 0.5
+  },
+  {
+    "name": "emmental",
+    "category": "gratin",
+    "price": 1.5
+  },
+  {
+    "name": "cheddar",
+    "category": "gratin",
+    "price": 1.5
+  },
+  {
+    "name": "goat",
+    "category": "gratin",
+    "price": 1.5
+  },
+  {
+    "name": "mozza",
+    "category": "gratin",
+    "price": 1.5
+  }
+]
