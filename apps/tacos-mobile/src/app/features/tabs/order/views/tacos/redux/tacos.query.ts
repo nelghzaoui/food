@@ -23,7 +23,7 @@ export class TacosQuery extends QueryEntity<TacosState> {
 
   private getStyles() {
     this.coreQuery.foods$
-      .pipe(map((foods: MobileFood[]) => foods.filter((r) => r.category === FoodCategory.STYLE)))
+      .pipe(map((foods: MobileFood[]) => foods.filter((r) => r.category === FoodCategory.TACOS)))
       .subscribe((foods) => this.store.update({ styles: foods }));
   }
 }

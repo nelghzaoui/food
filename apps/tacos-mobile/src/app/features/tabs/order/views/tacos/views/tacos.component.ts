@@ -27,7 +27,9 @@ export class TacosComponent implements OnInit {
 
   constructor(private readonly tacosQuery: TacosQuery, private readonly tacosService: TacosService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.tacosService.init();
+  }
 
   onSegmentChange(event: Event) {
     this.tacosService.update({ currentStep: (event as SegmentCustomEvent).detail.value as Step });
