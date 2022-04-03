@@ -1,9 +1,9 @@
 import { Document } from 'mongoose';
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { TacosCategory, TACOS_CATEGORY } from './tacos-category.interface';
+import { Food, TacosCategory, TACOS_CATEGORY } from '@food/shared/models/food';
 
 @Schema()
-export class Tacos extends Document {
+export class Tacos extends Document implements Food {
   @Prop({ required: true })
   name: string;
 

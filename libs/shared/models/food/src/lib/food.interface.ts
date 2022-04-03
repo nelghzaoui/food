@@ -1,16 +1,10 @@
+import { FoodCategory } from './food-category.enum';
+import { TacosCategory } from './tacos-category.enum';
+
 export interface Food {
   name: string;
-  category: FoodCategory;
+  category: FoodCategory | TacosCategory;
   price?: number;
   size?: number;
   allergens?: string[];
 }
-
-export enum FoodCategory {
-  TACOS = 'tacos',
-  FINGER = 'finger',
-  DRINK = 'drink',
-  DESSERT = 'dessert'
-}
-
-export const FOOD_CATEGORY = [FoodCategory.DRINK, FoodCategory.DESSERT, FoodCategory.FINGER];

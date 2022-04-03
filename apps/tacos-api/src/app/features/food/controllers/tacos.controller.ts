@@ -1,16 +1,6 @@
-import {
-  BadRequestException,
-  Body,
-  Controller,
-  Delete,
-  Get,
-  NotFoundException,
-  Param,
-  Patch,
-  Post
-} from '@nestjs/common';
-import { TacosService } from '../service/tacos.service';
+import { Controller, Get, NotFoundException } from '@nestjs/common';
 import { Food } from '@food/shared/models/food';
+import { TacosService } from '../services/tacos.service';
 
 @Controller('tacos')
 export class TacosController {

@@ -9,7 +9,7 @@ import {
   Patch,
   Post
 } from '@nestjs/common';
-import { FoodService } from '../service/food.service';
+import { FoodService } from '../services/food.service';
 import { Food } from '@food/shared/models/food';
 
 @Controller('food')
