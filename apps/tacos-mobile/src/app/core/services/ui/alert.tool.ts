@@ -1,7 +1,7 @@
 import { Injectable, NgZone } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 import { AlertButton } from '@ionic/core';
-import { MessageType } from '../api/models/message-type.class';
+import { ErrorMessage } from '../api/models/error-message.interface';
 
 @Injectable({ providedIn: 'root' })
 export class AlertTool {
@@ -38,7 +38,7 @@ export class AlertTool {
     this.show(message, buttons, callback);
   }
 
-  async presentError(errors: MessageType[], callback?: () => void) {
+  async presentError(errors: ErrorMessage[], callback?: () => void) {
     let message!: string;
     for (const error of errors) {
       message += error.description;

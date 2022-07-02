@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Network } from '@capacitor/network';
 import { Platform } from '@ionic/angular';
@@ -6,9 +6,8 @@ import { Observable, Subscriber } from 'rxjs';
 import { environment } from '../../../../environments/environment';
 import { AlertTool } from '../ui/alert.tool';
 import { LoadingTool } from '../ui/loading.tool';
-import { ErrorStatus } from './models/error-status.enum';
 import { HttpMethod } from './models/http-method.enum';
-import { MessageType } from './models/message-type.class';
+import { ErrorMessage, ErrorStatus } from './models/error-message.interface';
 
 @Injectable({ providedIn: 'root' })
 export class ApiService {
@@ -35,7 +34,7 @@ export class ApiService {
     return this.request<T>(HttpMethod.DELETE, service, parameters);
   }
 
-  private request<T>(method: HttpMethod, service: string, parameters = {}): Observable<T> {
+  private request<T>(method: HttpMethod, service: string, parameters?: T): Observable<T> {
     return new Observable<T>((observer: Subscriber<T>) => {
       this.loadingTool.present().then(() => {
         this.httpClient.request<T>(method, `${environment.endpoint}/${service}/`, parameters).subscribe({
@@ -43,7 +42,7 @@ export class ApiService {
             this.log(v);
             observer.next(v);
           },
-          error: (e) => observer.error(this.handleError(e)),
+          error: (e: HttpErrorResponse) => observer.error(this.handleError(e)),
           complete: () => observer.complete()
         });
         this.loadingTool.dismiss();
@@ -51,13 +50,19 @@ export class ApiService {
     });
   }
 
-  private async handleError(e: any): Promise<MessageType[]> {
-    const errors: MessageType[] = [];
-    const error = new MessageType(e.url, e.error, e.data, e.status);
+  private async handleError(e: HttpErrorResponse): Promise<ErrorMessage[]> {
+    const errors: ErrorMessage[] = [];
+    const error: ErrorMessage = {
+      id: e.url as string,
+      blockingCode: e.error,
+      description: e.message,
+      severityType: e.type.toString(),
+      status: e.status
+    };
 
     const connectionType = (await Network.getStatus()).connectionType;
     if (this.platform.is('android') && connectionType === 'none') {
-      e.status = ErrorStatus.NOT_CONNECTED;
+      error.description = 'not connected';
     }
 
     switch (e.status) {

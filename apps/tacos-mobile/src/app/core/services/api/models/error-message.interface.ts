@@ -1,3 +1,11 @@
+export interface ErrorMessage {
+  id: string;
+  blockingCode: string;
+  description: string;
+  severityType: string;
+  status: ErrorStatus;
+}
+
 export enum ErrorStatus {
   GENERIC = -1,
   SSL_EXCEPTION = -2,
