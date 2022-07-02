@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Network } from '@capacitor/network';
 import { Platform } from '@ionic/angular';
-import { Observable, Subscriber, take } from 'rxjs';
+import { Observable, Subscriber } from 'rxjs';
 import { environment } from '../../../../environments/environment';
 import { AlertTool } from '../ui/alert.tool';
 import { LoadingTool } from '../ui/loading.tool';
@@ -38,17 +38,14 @@ export class ApiService {
   private request<T>(method: HttpMethod, service: string, parameters = {}): Observable<T> {
     return new Observable<T>((observer: Subscriber<T>) => {
       this.loadingTool.present().then(() => {
-        this.httpClient
-          .request<T>(method, `${environment.endpoint}/${service}/`, parameters)
-          .pipe(take(1))
-          .subscribe({
-            next: (v: T) => {
-              this.log(v);
-              observer.next(v);
-            },
-            error: (e) => observer.error(this.handleError(e)),
-            complete: () => observer.complete()
-          });
+        this.httpClient.request<T>(method, `${environment.endpoint}/${service}/`, parameters).subscribe({
+          next: (v: T) => {
+            this.log(v);
+            observer.next(v);
+          },
+          error: (e) => observer.error(this.handleError(e)),
+          complete: () => observer.complete()
+        });
         this.loadingTool.dismiss();
       });
     });

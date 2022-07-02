@@ -1,0 +1,110 @@
+// MongoDB Playground
+// To disable this template go to Settings | MongoDB | Use Default Template For Playground.
+// Make sure you are connected to enable completions and to be able to run a playground.
+// Use Ctrl+Space inside a snippet or a string literal to trigger completions.
+
+// Select the database to use.
+use('tacos');
+
+// The drop() command destroys all data from a collection.
+// Make sure you run it against the correct database and collection.
+db.foods.drop();
+
+// Insert a few documents into the sales collection.
+db.foods.insertMany([
+  {
+    "name": "fries",
+    "category": "finger",
+    "price": 1.5
+  },
+  {
+    "name": "fries-cheddar",
+    "category": "finger",
+    "price": 2.5
+  },
+  {
+    "name": "tenders",
+    "category": "finger",
+    "price": 5,
+    "size": 5
+  },
+  {
+    "name": "chili-cheese",
+    "category": "finger",
+    "price": 3.9,
+    "size": 5
+  },
+  {
+    "name": "soft",
+    "category": "drink",
+    "price": 1.5,
+    "size": 0.33
+  },
+  {
+    "name": "redbull",
+    "category": "drink",
+    "price": 2,
+    "size": 0.33
+  },
+  {
+    "name": "fresh-juice",
+    "category": "drink",
+    "price": 3,
+    "size": 0.5
+  },
+  {
+    "name": "smoothie",
+    "category": "drink",
+    "price": 3.5,
+    "size": 0.5
+  },
+  {
+    "name": "tiramisu",
+    "category": "dessert",
+    "price": 3.9
+  },
+  {
+    "name": "cake",
+    "category": "dessert",
+    "price": 2.5
+  },
+  {
+    "name": "ice-cream",
+    "category": "dessert",
+    "price": 3.2
+  },
+  {
+    "name": "sundae",
+    "category": "dessert",
+    "price": 2.5
+  },
+  {
+    "name": "classic",
+    "category": "tacos",
+    "price": 6.0
+  },
+  {
+    "name": "gratin",
+    "category": "tacos",
+    "price": 7.5
+  },
+  {
+    "name": "indian",
+    "category": "tacos",
+    "price": 6.5
+  }
+]);
+
+// Run a find command to view items sold on April 4th, 2014.
+db.sales.find({ date: { $gte: new Date('2014-04-04'), $lt: new Date('2014-04-05') } });
+
+// Build an aggregation to view total sales for each product in 2014.
+const aggregation = [
+  { $match: { date: { $gte: new Date('2014-01-01'), $lt: new Date('2015-01-01') } } },
+  { $group: { _id: '$item', totalSaleAmount: { $sum: { $multiply: [ '$price', '$quantity' ] } } } }
+];
+
+// Run the aggregation and open a cursor to the results.
+// Use toArray() to exhaust the cursor to return the whole result set.
+// You can use hasNext()/next() to iterate through the cursor page by page.
+db.sales.aggregate(aggregation);

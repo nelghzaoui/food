@@ -79,5 +79,20 @@
     "name": "indian",
     "category": "tacos",
     "price": 6.5
+  },
+  {
+    "name": "raclette",
+    "category": "tacos",
+    "price": 7.5
+  },
+  {
+    "name": "oriental",
+    "category": "tacos",
+    "price": 6.5
+  },
+  {
+    "name": "crispy",
+    "category": "tacos",
+    "price": 7.5
   }
 ]

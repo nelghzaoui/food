@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { transaction } from '@datorama/akita';
 import { TacosCategory } from '@food/shared/models/food';
-import { take } from 'rxjs';
+import { take } from 'rxjs/operators';
 import { ApiService } from '../../../../../../core/services/api/api.service';
 import { MobileFood } from '../../../../../../core/services/food/models/mobile-food.interface';
 import { TacosState, TacosStore } from '../redux/tacos.store';
@@ -17,11 +17,14 @@ export class TacosService implements TacosServiceFacade {
     return this.apiService
       .get<MobileFood[]>(this.TACOS_API)
       .pipe(take(1))
-      .subscribe((items: MobileFood[]) => {
-        items.map((item: MobileFood) => {
-          this.filterByCategory(items, item.category as TacosCategory);
-        });
-      });
+      .subscribe((items: any) => this.handleTacosItems(items));
+  }
+
+  private handleTacosItems(items: MobileFood[]) {
+    items.map((item: MobileFood) => {
+      item.imagePath = '/assets/icon/flow/tacos.png';
+      this.filterByCategory(items, item.category as TacosCategory);
+    });
   }
 
   private filterByCategory(foods: MobileFood[], category: TacosCategory) {
@@ -41,12 +44,6 @@ export class TacosService implements TacosServiceFacade {
     };
 
     return categories[category];
-  }
-
-  private handleTacosItems(items: MobileFood[]) {
-    const sizes = items.filter((item) => item.category === TacosCategory.SAUCE);
-
-    this.tacosStore.update({ sizes });
   }
 
   @transaction()

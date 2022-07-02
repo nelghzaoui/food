@@ -1,12 +1,4 @@
-<!-- <div class="steps-container">
-  <ion-card mode="ios" *ngFor="let style of styles$ | async" (click)="onSelect(style.name)" button="true">
-    <ion-card-content>
-      <img src="./assets/img/tacos/{{ style.name }}.png" />
-      <ion-card-title>{{ 'order.tacos.style.' + style.name | translate }}</ion-card-title>
-      <p>{{ 'core.price.from' | translate }} {{ style.price | currency: 'EUR' }}</p>
-    </ion-card-content>
-    <ion-ripple-effect></ion-ripple-effect>
-  </ion-card>
-</div> -->
-
-<food-shared-list-card [foods]="styles$ | async"></food-shared-list-card>
+<food-shared-list-card [foods]="styles$ | async" (selected)="onSelect($event)"></food-shared-list-card>
+<ng-container *ngIf="isGratin">
+  <food-shared-list-card [foods]="gratins$ | async" (selected)="onSelect($event)"></food-shared-list-card>
+</ng-container>

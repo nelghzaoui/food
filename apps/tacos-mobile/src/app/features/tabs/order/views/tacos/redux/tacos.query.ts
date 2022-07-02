@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { QueryEntity } from '@datorama/akita';
-import { map } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { FoodCategory } from '@food/shared/models/food';
 import { CoreQuery } from '../../../../../../core/redux/core.query';
 import { MobileFood } from '../../../../../../core/services/food/models/mobile-food.interface';
@@ -18,12 +18,12 @@ export class TacosQuery extends QueryEntity<TacosState> {
 
   constructor(protected store: TacosStore, private readonly coreQuery: CoreQuery) {
     super(store);
-    this.getStyles();
+    // this.getStyles();
   }
 
-  private getStyles() {
-    this.coreQuery.foods$
-      .pipe(map((foods: MobileFood[]) => foods.filter((r) => r.category === FoodCategory.TACOS)))
-      .subscribe((foods) => this.store.update({ styles: foods }));
-  }
+  // private getStyles() {
+  //   this.coreQuery.foods$
+  //     .pipe(map((foods: MobileFood[]) => foods.filter((r) => r.category === FoodCategory.TACOS)))
+  //     .subscribe((styles: any) => this.store.update({ styles }));
+  // }
 }

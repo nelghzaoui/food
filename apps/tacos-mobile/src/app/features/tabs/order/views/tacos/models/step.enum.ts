@@ -1,10 +1,8 @@
 export enum Step {
   STYLE = 'style',
   SIZE = 'size',
-  MEAT = 'meat',
   SAUCE = 'sauce',
-  GARNISH = 'garnish',
-  GRATIN = 'gratin'
+  GARNISH = 'garnish'
 }
 
-export const STEPS = [Step.STYLE, Step.SIZE, Step.MEAT, Step.SAUCE, Step.GARNISH, Step.GRATIN];
+export const STEPS = [Step.STYLE, Step.SIZE, Step.SAUCE, Step.GARNISH];

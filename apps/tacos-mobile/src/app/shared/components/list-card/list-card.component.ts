@@ -10,7 +10,7 @@ import { MobileFood } from '../../../core/services/food/models/mobile-food.inter
 export class ListCardComponent implements OnDestroy {
   @Input() foods: MobileFood[] | null = null;
   @Input() quantity = 0;
-  @Output() selected = new EventEmitter<MobileFood[]>();
+  @Output() selected = new EventEmitter<MobileFood>();
 
   private selectedFoods: MobileFood[] = [];
 
@@ -19,11 +19,11 @@ export class ListCardComponent implements OnDestroy {
   }
 
   onSelect(selectedFood: MobileFood): void {
-    this.selectedFoods.push(selectedFood);
+    // this.selectedFoods.push(selectedFood);
 
-    if (this.selectedFoods.length === this.quantity || (this.quantity === 0 && this.selectedFoods.length <= 5)) {
-      this.selected.emit(this.selectedFoods);
-    }
+    // if (this.selectedFoods.length === this.quantity || (this.quantity === 0 && this.selectedFoods.length <= 5)) {
+    this.selected.emit(selectedFood);
+    // }
   }
 
   // TODO: Render the visual part for the user

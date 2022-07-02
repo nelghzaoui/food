@@ -1,4 +1,8 @@
 export enum Style {
   CLASSIC = 'classic',
-  GRATIN = 'gratin'
+  GRATIN = 'gratin',
+  RACLETTE = 'raclette',
+  INDIAN = 'indian',
+  ORIENTAL = 'oriental',
+  CRISPY = 'crispy'
 }

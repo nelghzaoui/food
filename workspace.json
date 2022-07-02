@@ -73,7 +73,7 @@
       "projectType": "application",
       "targets": {
         "build": {
-          "executor": "@nrwl/node:build",
+          "executor": "@nrwl/node:webpack",
           "outputs": ["{options.outputPath}"],
           "options": {
             "outputPath": "dist/apps/tacos-api",
@@ -96,7 +96,7 @@
           }
         },
         "serve": {
-          "executor": "@nrwl/node:execute",
+          "executor": "@nrwl/node:node",
           "options": {
             "buildTarget": "tacos-api:build"
           }

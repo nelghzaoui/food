@@ -15,6 +15,7 @@ export interface TacosState {
   gratins: MobileFood[];
   /* Selected */
   selectedStyle: Style;
+  selectedGratin: MobileFood;
 }
 
 export const initialState: TacosState = {
@@ -27,7 +28,8 @@ export const initialState: TacosState = {
   garnishes: [],
   gratins: [],
   /* Selected */
-  selectedStyle: Style.CLASSIC
+  selectedStyle: Style.CLASSIC,
+  selectedGratin: {} as any
 };
 
 @Injectable()

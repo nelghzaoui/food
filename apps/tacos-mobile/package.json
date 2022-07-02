@@ -8,6 +8,8 @@
     "@capacitor/storage": "1.2.5"
   },
   "devDependencies": {
+    "@nxtend/ionic-angular": "13.1.0",
+    "@nxtend/capacitor": "13.0.0",
     "@capacitor/cli": "3.4.1"
   }
 }
