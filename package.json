@@ -8,8 +8,8 @@
   },
   "license": "MIT",
   "scripts": {
-    "start:api": "nx serve tacos-api",
-    "start:mobile": "nx serve tacos-mobile",
+    "serve:api": "nx serve tacos-api",
+    "serve:mobile": "nx serve tacos-mobile",
     "build": "nx build",
     "test": "nx test",
     "postinstall": "ngcc --properties es2015 browser module main"
