@@ -1,7 +1,7 @@
 {
   "name": "tacos-api",
   "scripts": {
-    "import-foods": "mongoimport --uri mongodb+srv://nasreddine:knOdphc5grRDW1uF@cluster0.qwhsm.mongodb.net/tacos -c foods --file src/assets/data/foods.json --jsonArray",
+    "import-foods": "mongoimport --uri mongodb+srv://nasreddine:knOdphc5grRDW1uF@cluster0.qwhsm.mongodb.net/foods -c foods --file src/assets/data/foods.json --jsonArray",
     "import-tacos": "mongoimport --uri mongodb+srv://nasreddine:knOdphc5grRDW1uF@cluster0.qwhsm.mongodb.net/tacos -c tacos --file src/assets/data/tacos.json --jsonArray"
   }
 }
