@@ -38,16 +38,18 @@ export class ApiService {
     return new Observable<T>((observer: Subscriber<T>) => {
       this.loadingTool.present().then(() => {
         this.httpClient.request<T>(method, `${environment.endpoint}/${service}/`, parameters).subscribe({
-          next: (v: T) => {
-            this.log(v);
-            observer.next(v);
-          },
-          error: (e: HttpErrorResponse) => observer.error(this.handleError(e)),
+          next: (response: T) => observer.next(this.handleResponse(response)),
+          error: (error: HttpErrorResponse) => observer.error(this.handleError(error)),
           complete: () => observer.complete()
         });
         this.loadingTool.dismiss();
       });
     });
+  }
+
+  private handleResponse<T>(response: T): T {
+    this.log(response);
+    return response;
   }
 
   private async handleError(e: HttpErrorResponse): Promise<ErrorMessage[]> {

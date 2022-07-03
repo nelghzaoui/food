@@ -10,12 +10,12 @@ import { FoodService } from './core/services/food/food.service';
   declarations: [AppComponent],
   entryComponents: [],
   providers: [
-    // {
-    //   provide: APP_INITIALIZER,
-    //   useFactory: (f: FoodService) => () => f.init(),
-    //   deps: [FoodService],
-    //   multi: true
-    // }
+    {
+      provide: APP_INITIALIZER,
+      useFactory: (f: FoodService) => () => f.init(),
+      deps: [FoodService],
+      multi: true
+    }
   ],
   imports: [
     MobileCoreModule,
